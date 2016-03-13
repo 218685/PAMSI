@@ -1,42 +1,64 @@
 #include "IRunnable.hh"
 #include "IStoper.hh"
+#include "StoperZZapisem.hh"
 #include "Tab.hh"
-#include <iostream>
+#include "TabTest.hh"
 using namespace std;
 
 int main()
 {
-  IStoper Stoper;
-  Tab Tabl;
-
-  double czasy[5]={0,0,0,0,0};
-
+  StoperZZapisem  Stoper;
+  TabTest         Tabl;
   int ile[5] = {10,1000,100000,1000000,100000000};
 
+  ofstream plik;
+  plik.open("2razy.txt" );
+
+  Tabl.GetTyp() = 2;
 //powiekszanie 2 razy
   for(int j=0; j<5; ++j){
-    if(Tabl.Prepare()==true)
-      Stoper.Start();
-    if(Tabl.Run()==true)
-      Stoper.Stop();
-    czasy[j] = Stoper.GetElapsedTime();
-    cout << czasy[j] << " s" << endl;
+  //seria pomiarow
+    for(int i=0; i<POJEMNOSC; ++i){
+      if( Tabl.Prepare(10) == true )
+        Stoper.Start();
+      if( Tabl.Run(ile[j]) == true )
+        Stoper.Stop();
+      Stoper.SaveElapsedTime(Stoper.GetElapsedTime());
+      }
+    //Stoper.ShowMemory();
+    cout << Stoper.SeriesAverage() << " s" << endl;
+    Stoper.SaveAverageTimeToBuffer(Stoper.SeriesAverage());
+    if( plik.good() )
+      Stoper.DumpOneTimeToFile(plik, Stoper.SeriesAverage());
+    Stoper.CleanMemory();
     }
 
+  plik.close();
+  Stoper.CleanBuffer();
+
+  ofstream plik1;
+  plik1.open("po1.txt" );
   cout << endl;
-//powiekszanie po jednym
-/*
-  for(int j=0; j<5; ++j){
-    start = clock();
-    for (int i=0; i < ile[j]; i++){
-      Tabl.ZapiszNowyPoJednym(99);
-    }
-    koniec = clock(); // bieżący czas systemowy w ms
-    czasy[j] = (double) ( koniec - start) / CLOCKS_PER_SEC;
-    cout << czasy[j] << " s" << endl;
-    Tabl.Poczatek() = Tabl.WypelnijOdNowa();
-    }
-*/
 
+//powiekszanie po jednym
+  Tabl.GetTyp() = 1;
+  for(int j=0; j<5; ++j){
+//seria pomiarow
+    for(int i=0; i<POJEMNOSC; ++i){
+      if( Tabl.Prepare(10) == true )
+        Stoper.Start();
+      if( Tabl.Run(ile[j]) == true )
+        Stoper.Stop();
+      Stoper.SaveElapsedTime(Stoper.GetElapsedTime());
+      }
+    //Stoper.ShowMemory();
+    cout << Stoper.SeriesAverage() << " s" << endl;
+    Stoper.SaveAverageTimeToBuffer(Stoper.SeriesAverage());
+    if( plik1.good() )
+      Stoper.DumpOneTimeToFile(plik1, Stoper.SeriesAverage());
+    Stoper.CleanMemory();
+    }
+       plik1.close();
   return 0;
 }
+

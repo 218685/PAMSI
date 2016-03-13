@@ -1,15 +1,11 @@
-#ifndef TAB_HH
-#define TAB_HH
-
 #include "Tab.hh"
-#include <iostream>
 using namespace std;
 
-int* Tab::ZwiekszOJeden(){
+int * Tab::ZwiekszOJeden(){
 
   ++Pojemnosc();    //zwiekszamy pojemnosc o 1
   int * nowa = new int [Pojemnosc()];   //nowa tablica wieksza o 1
-  copy(tab, tab+Pojemnosc()-1, nowa);   // kopiojemy stara tablice do nowej
+  copy(tab, tab+Pojemnosc()-1, nowa);   // kopiujemy stara tablice do nowej
   delete [] tab;       // usuwamy stara tablice
   tab = NULL;
   return nowa;        // zwracamy nowa tablice

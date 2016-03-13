@@ -9,7 +9,9 @@ class IRunnable
 protected:
   int wielkosc = 0;
 public:
-  int & Wielkosc() { return wielkosc; }
+  int & Wielkosc();
   virtual bool Prepare(int rozmiar) = 0;
-  virtual bool Run() = 0;
+  virtual bool Run(int track) = 0;
 };
+
+#endif

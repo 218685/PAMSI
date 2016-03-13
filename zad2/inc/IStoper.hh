@@ -7,10 +7,13 @@ using namespace std;
 
 class IStoper
 {
+protected:
   clock_t start, koniec;
 public:
-  void Start() { start = clock();}
-  void Stop()  { koniec = clock(); }
-  double GetElapsedTime() { double czas = (double) (koniec - start)/ CLOCKS_PER_SEC; return czas; }
-  bool DumpTimesToCSV = 0;
+  virtual void Start();
+  virtual void Stop();
+  virtual double GetElapsedTime();
+  //virtual bool DumpElapsedTimeToCSV = 0;
 };
+
+#endif

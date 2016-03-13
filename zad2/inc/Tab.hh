@@ -4,12 +4,12 @@
 #include <iostream>
 using namespace std;
 
-class Tab : public IRunnable
+class Tab
 {
-  int n=10;
+protected:
+  int n = 10;
   int rozm = 0;
   int * tab;
-
 public:
   Tab() { tab = new int [n]; };
   ~Tab() { delete [] tab; tab = NULL; };
@@ -23,6 +23,6 @@ public:
   void ZapiszNowyPoJednym(int elem);
   int* ZwiekszOJeden();
   int* Zwieksz2Razy();
-  virtual bool Prepare(int rozmiar);
-  virtual bool Run();
 };
+
+#endif
