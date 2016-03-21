@@ -46,7 +46,7 @@ void Tab::BubbleSort(){
         int tmp = tab[i];     // zapisujemy aktualny element
         tab[i] = tab[i-1];    // zamieniamy miejscami
         tab[i-1] = tmp;       // wpisujemy w nowe miejsce
-        i = Rozmiar();
+        i = Rozmiar();        // działamy, az cała tablica będzie posortowana
       }//if
     }//else
 }
