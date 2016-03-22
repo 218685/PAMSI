@@ -1,5 +1,6 @@
 #include <iostream>
 #include <ctime>
+#include <sys/time.h>
 using namespace std;
 
 class Tab
@@ -76,40 +77,48 @@ void Tab::ZapiszNowyPoJednym(int elem){
 
 int main()
 {
-  clock_t start, koniec;
+  timeval start, stop;
   Tab Tabl;
   Tabl.WypelnijTab();
 
   double czasy[5]={0,0,0,0,0};
+  double t1,t2;
 
   int ile[5] = {10,1000,100000,1000000,100000000};
-cout << "Podwajanie pojemnosci tablicy: " << endl;
+  cout << "Podwajanie pojemnosci tablicy: " << endl;
 //powiekszanie 2 razy
   for(int j=0; j<5; ++j){
-    start = clock();
+    gettimeofday(&start, NULL);
+    t1 = start.tv_sec + (start.tv_usec/1000000.0);
+
     for (int i=0; i < ile[j]; i++)
       Tabl.ZapiszNowy(99);
 
-    koniec = clock(); // bieżący czas systemowy w ms
-    czasy[j] = (double) ( koniec - start) / CLOCKS_PER_SEC;
+    gettimeofday(&stop, NULL); // bieżący czas systemowy w ms
+    t2 = stop.tv_sec + (stop.tv_usec/1000000.0);
+    czasy[j] = t2 - t1;
     cout << czasy[j] << " s" << endl;
+
     Tabl.Poczatek() = Tabl.WypelnijOdNowa();
     }
 
   cout << endl << "Dodawanie po jednym elemencie: " << endl;
+
 //powiekszanie po jednym
 
   for(int j=0; j<5; ++j){
-    start = clock();
-    for (int i=0; i < ile[j]; i++){
+    gettimeofday(&start, NULL);
+    t1 = start.tv_sec + (start.tv_usec/1000000.0);
+
+    for (int i=0; i < ile[j]; i++)
       Tabl.ZapiszNowyPoJednym(99);
-    }
-    koniec = clock(); // bieżący czas systemowy w ms
-    czasy[j] = (double) ( koniec - start) / CLOCKS_PER_SEC;
+
+    gettimeofday(&stop, NULL);  // bieżący czas systemowy w ms
+    t2 = stop.tv_sec + (stop.tv_usec/1000000.0);
+    czasy[j] = t2 - t1;
     cout << czasy[j] << " s" << endl;
     Tabl.Poczatek() = Tabl.WypelnijOdNowa();
     }
-
 
   return 0;
 }
