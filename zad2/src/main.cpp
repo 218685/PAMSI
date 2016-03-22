@@ -12,14 +12,14 @@ int main()
   int ile[5] = {10,1000,100000,1000000,100000000};
 
   ofstream plik;
-  plik.open("2razy.txt" );
+  plik.open("podwajanie_pojemnosci.txt" );
 
   Tabl.GetTyp() = 2;
 //powiekszanie 2 razy
   for(int j=0; j<5; ++j){
   //seria pomiarow
     for(int i=0; i<POJEMNOSC; ++i){
-      if( Tabl.Prepare(10) == true )
+      if( Tabl.Prepare(15) == true )
         Stoper.Start();
       if( Tabl.Run(ile[j]) == true )
         Stoper.Stop();
@@ -27,6 +27,7 @@ int main()
       }
     //Stoper.ShowMemory();
     cout << Stoper.SeriesAverage() << " s" << endl;
+
     Stoper.SaveAverageTimeToBuffer(Stoper.SeriesAverage());
     if( plik.good() )
       Stoper.DumpOneTimeToFile(plik, Stoper.SeriesAverage());
@@ -37,7 +38,7 @@ int main()
   Stoper.CleanBuffer();
 
   ofstream plik1;
-  plik1.open("po1.txt" );
+  plik1.open("dodawanie_po_1.txt" );
   cout << endl;
 
 //powiekszanie po jednym
