@@ -7,7 +7,7 @@ int & TabTest::GetTyp(){
   }
 
 bool TabTest::Prepare(int rozmiar){
-
+  //jeśli tablica nie jest pusta, czyściwy i wypelniamy na nowo;
   if(Rozmiar()!=0){
     delete [] tab;
     Rozmiar() = 0;
@@ -20,20 +20,23 @@ bool TabTest::Prepare(int rozmiar){
       }
     tab = tmp;
     }
-  else{
-    WypelnijTab();
-    Wielkosc() = rozmiar;
-    }
+  else
+    for(int i = 0; i < Pojemnosc(); ++i){
+      tab[i]=i+1;
+      ++Rozmiar();
+      }
 
   return true;
 }
 
 bool TabTest::Run(int track){
+
   if( GetTyp()==2 )
     for (int i=0; i < track; i++)
       ZapiszNowy(99);
   if( GetTyp()==1 )
      for (int i=0; i < track; i++)
       ZapiszNowyPoJednym(99);
+
   return true;
 }
