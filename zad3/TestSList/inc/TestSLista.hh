@@ -88,11 +88,11 @@ template <typename Object>
 bool TestSLista<Object>::Run(Object track){
 
   SNode<Object>* znajdek = this->Find(track);
-  if(znajdek==NULL)
+ /* if(znajdek==NULL)
     cout << "Nie znaleziono!" << endl;
   else
     cout << "Znaleziono!" << endl;
-
+*/
   return true;
 }
 
