@@ -2,16 +2,16 @@
 using namespace std;
 
 void IStoper::Start(){
-  start = clock();
+  gettimeofday(&start, NULL);
   }
 
 void IStoper::Stop(){
-  koniec = clock();
+  gettimeofday(&stop, NULL);
   }
 
 double IStoper::GetElapsedTime(){
-
-  double czas = ((double) (koniec - start))/CLOCKS_PER_SEC;
+  // zwracamy czas w sekundach
+  double czas = stop.tv_sec + (stop.tv_usec/1000000.0) - start.tv_sec - (start.tv_usec/1000000.0);
   return czas;
   }
 
