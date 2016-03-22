@@ -3,12 +3,13 @@
 
 #include <iostream>
 #include <ctime>
+#include <sys/time.h>
 using namespace std;
 
 class IStoper
 {
 protected:
-  clock_t start, koniec;
+  timeval start,stop;
 public:
   virtual void Start();
   virtual void Stop();
