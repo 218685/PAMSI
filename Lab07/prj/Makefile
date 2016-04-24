@@ -1,0 +1,25 @@
+CXXFLAGS=-g -Iinc -Wall -pedantic -std=c++11
+
+__start__: BinaryTree
+	./BinaryTree
+
+BinaryTree: obj obj/main.o obj/RBTree_Test.o obj/AdvancedStopwatch.o obj/Stopwatch.o
+	g++ -Wall -pedantic -std=c++0x -o BinaryTree obj/main.o obj/RBTree_Test.o obj/AdvancedStopwatch.o obj/Stopwatch.o
+
+obj:
+	mkdir ./obj
+
+obj/Stopwatch.o: src/Stopwatch.cpp 
+	g++ -c ${CXXFLAGS} -o obj/Stopwatch.o src/Stopwatch.cpp
+
+obj/AdvancedStopwatch.o: src/AdvancedStopwatch.cpp 
+	g++ -c ${CXXFLAGS} -o obj/AdvancedStopwatch.o src/AdvancedStopwatch.cpp
+
+obj/RBTree_Test.o: src/RBTree_Test.cpp inc/RBTree_Test.hh
+	g++ -c ${CXXFLAGS} -o obj/RBTree_Test.o src/RBTree_Test.cpp
+
+obj/main.o: src/main.cpp inc/RBTree_Test.hh inc/RBTree.hh
+	g++ -c ${CXXFLAGS} -o obj/main.o src/main.cpp
+
+clean:
+	rm -f obj/*.o BinaryTree
