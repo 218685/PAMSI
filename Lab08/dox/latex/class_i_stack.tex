@@ -1,0 +1,145 @@
+\hypertarget{class_i_stack}{\subsection{Dokumentacja szablonu klasy I\-Stack$<$ Object $>$}
+\label{class_i_stack}\index{I\-Stack$<$ Object $>$@{I\-Stack$<$ Object $>$}}
+}
+
+
+Klasa szablonowa modelująca interfejs stosu.  
+
+
+
+
+{\ttfamily \#include $<$I\-Stack.\-hh$>$}
+
+
+
+Diagram dziedziczenia dla I\-Stack$<$ Object $>$
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=172pt]{class_i_stack__inherit__graph}
+\end{center}
+\end{figure}
+\subsubsection*{Metody publiczne}
+\begin{DoxyCompactItemize}
+\item 
+virtual bool \hyperlink{class_i_stack_a5f897eeae7852113a299787faceda2c6}{Is\-Empty} ()=0
+\begin{DoxyCompactList}\small\item\em Metoda sprawdzająca, czy stos jest pusty. \end{DoxyCompactList}\item 
+virtual int \hyperlink{class_i_stack_a4d003c4795b2335a9038fd988875d72e}{Size} ()=0
+\begin{DoxyCompactList}\small\item\em Metoda obliczająca rozmiar stosu. \end{DoxyCompactList}\item 
+virtual Object \hyperlink{class_i_stack_a25ec1b2c853e59e4ec05a0579bf817ff}{Top} ()=0
+\begin{DoxyCompactList}\small\item\em Metoda zwracająca wierzchołek stosu. \end{DoxyCompactList}\item 
+virtual void \hyperlink{class_i_stack_a94d298580de241fd145689925a101fb1}{Push} (Object item)=0
+\begin{DoxyCompactList}\small\item\em Metoda dodająca element na stos. \end{DoxyCompactList}\item 
+virtual Object \hyperlink{class_i_stack_a09d0e8878c0c2c14c7f124f41786512f}{Pop} ()=0
+\begin{DoxyCompactList}\small\item\em Metoda zrzucająca element ze stosu. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsubsection{Opis szczegółowy}
+\subsubsection*{template$<$typename Object$>$class I\-Stack$<$ Object $>$}
+
+Klasa szablonowa modelująca interfejs stosu. 
+
+Definiuje A\-D\-T dla stosu.
+
+\hyperlink{class_stos}{Stos} może przechowywać dowolny typ danych dzięki zastosowaniu szablonu. 
+
+Definicja w linii 22 pliku I\-Stack.\-hh.
+
+
+
+\subsubsection{Dokumentacja funkcji składowych}
+\hypertarget{class_i_stack_a5f897eeae7852113a299787faceda2c6}{\index{I\-Stack@{I\-Stack}!Is\-Empty@{Is\-Empty}}
+\index{Is\-Empty@{Is\-Empty}!IStack@{I\-Stack}}
+\paragraph[{Is\-Empty}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Object $>$ virtual bool {\bf I\-Stack}$<$ Object $>$\-::Is\-Empty (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{class_i_stack_a5f897eeae7852113a299787faceda2c6}
+
+
+Metoda sprawdzająca, czy stos jest pusty. 
+
+true -\/ jeśli stos jest pustay  false -\/ jeśli stos nie jest pusty 
+
+Implementowany w \hyperlink{class_stos_abc1fbf4ecba79d7d88e6f80e069315f5}{Stos$<$ Object $>$}.
+
+\hypertarget{class_i_stack_a09d0e8878c0c2c14c7f124f41786512f}{\index{I\-Stack@{I\-Stack}!Pop@{Pop}}
+\index{Pop@{Pop}!IStack@{I\-Stack}}
+\paragraph[{Pop}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Object $>$ virtual Object {\bf I\-Stack}$<$ Object $>$\-::Pop (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{class_i_stack_a09d0e8878c0c2c14c7f124f41786512f}
+
+
+Metoda zrzucająca element ze stosu. 
+
+Usuwa wierzchołek ze stosu i zwraca jego wartość. \begin{DoxyReturn}{Zwraca}
+element na wierzchu stosu 
+\end{DoxyReturn}
+
+
+Implementowany w \hyperlink{class_stos_aa4b761d3581113ee3cf312a501ed115a}{Stos$<$ Object $>$}.
+
+\hypertarget{class_i_stack_a94d298580de241fd145689925a101fb1}{\index{I\-Stack@{I\-Stack}!Push@{Push}}
+\index{Push@{Push}!IStack@{I\-Stack}}
+\paragraph[{Push}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Object $>$ virtual void {\bf I\-Stack}$<$ Object $>$\-::Push (
+\begin{DoxyParamCaption}
+\item[{Object}]{item}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{class_i_stack_a94d298580de241fd145689925a101fb1}
+
+
+Metoda dodająca element na stos. 
+
+Wrzuca element na wierzchołek stosu. 
+\begin{DoxyParams}[1]{Parametry}
+\mbox{\tt in}  & {\em item} & -\/ element do dodania \\
+\hline
+\end{DoxyParams}
+
+
+Implementowany w \hyperlink{class_stos_aa149141113dd5b156f21518a9a1e6c8e}{Stos$<$ Object $>$}.
+
+\hypertarget{class_i_stack_a4d003c4795b2335a9038fd988875d72e}{\index{I\-Stack@{I\-Stack}!Size@{Size}}
+\index{Size@{Size}!IStack@{I\-Stack}}
+\paragraph[{Size}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Object $>$ virtual int {\bf I\-Stack}$<$ Object $>$\-::Size (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{class_i_stack_a4d003c4795b2335a9038fd988875d72e}
+
+
+Metoda obliczająca rozmiar stosu. 
+
+\begin{DoxyReturn}{Zwraca}
+liczba elementów na stos 
+\end{DoxyReturn}
+
+
+Implementowany w \hyperlink{class_stos_a54058e5bf9a0f981cbc82f7cb130f565}{Stos$<$ Object $>$}.
+
+\hypertarget{class_i_stack_a25ec1b2c853e59e4ec05a0579bf817ff}{\index{I\-Stack@{I\-Stack}!Top@{Top}}
+\index{Top@{Top}!IStack@{I\-Stack}}
+\paragraph[{Top}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Object $>$ virtual Object {\bf I\-Stack}$<$ Object $>$\-::Top (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{class_i_stack_a25ec1b2c853e59e4ec05a0579bf817ff}
+
+
+Metoda zwracająca wierzchołek stosu. 
+
+\begin{DoxyReturn}{Zwraca}
+element na wierzchu stosu 
+\end{DoxyReturn}
+
+
+Implementowany w \hyperlink{class_stos_af7be7c7dd2e137e619c8497025119ad5}{Stos$<$ Object $>$}.
+
+
+
+Dokumentacja dla tej klasy została wygenerowana z pliku\-:\begin{DoxyCompactItemize}
+\item 
+prj/inc/\hyperlink{_i_stack_8hh}{I\-Stack.\-hh}\end{DoxyCompactItemize}

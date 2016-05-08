@@ -1,0 +1,357 @@
+\hypertarget{class_graph}{\subsection{Dokumentacja klasy Graph}
+\label{class_graph}\index{Graph@{Graph}}
+}
+
+
+{\ttfamily \#include $<$Graph.\-hh$>$}
+
+
+
+Diagram dziedziczenia dla Graph
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=194pt]{class_graph__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Diagram współpracy dla Graph\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=240pt]{class_graph__coll__graph}
+\end{center}
+\end{figure}
+\subsubsection*{Metody publiczne}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_graph_ae4c72b8ac4d693c49800a4c7e273654f}{Graph} ()
+\begin{DoxyCompactList}\small\item\em Konstruktor grafu. \end{DoxyCompactList}\item 
+\hyperlink{class_graph_a4112e28d02c5b96ff903e0c5ef23f754}{Graph} (int problem\-Size)
+\begin{DoxyCompactList}\small\item\em Konstruktor grafu. \end{DoxyCompactList}\item 
+\hyperlink{class_graph_a902c5b3eacb66d60752525ab23297a95}{$\sim$\-Graph} ()
+\begin{DoxyCompactList}\small\item\em Destruktor grafu. \end{DoxyCompactList}\item 
+\hyperlink{class_b_list}{B\-List}$<$ unsigned $>$ $\ast$ \hyperlink{class_graph_a7ba4e8932750650f1aa0ffac47ef6d53}{neighbours} (unsigned i)
+\begin{DoxyCompactList}\small\item\em Podaje listę sąsiedztwa danego wierzchołka. \end{DoxyCompactList}\item 
+virtual bool \hyperlink{class_graph_a6e15151dd48dbc8d88e9c69b9da1ce42}{are\-Adjacent} (unsigned i, unsigned j)
+\begin{DoxyCompactList}\small\item\em Sprawdza, czy wierzchołki są sąsiadujące Szuka wierzchołka j na liście sąsiedztwa wierzchołka i. \end{DoxyCompactList}\item 
+virtual void \hyperlink{class_graph_a2fbe0e22365c6ca537ad58cc41f762d3}{insert\-Vertex} (unsigned i)
+\begin{DoxyCompactList}\small\item\em Dodaje wierzchołek Dodaje do listy wierzchołków. \end{DoxyCompactList}\item 
+virtual void \hyperlink{class_graph_adcd035a684543785d45f5e595e642d04}{insert\-Edge} (unsigned i, unsigned j, unsigned w=1)
+\begin{DoxyCompactList}\small\item\em Dodaje krawędź Dodaje wpisy na listach sąsiedztwa dla obu wierzchołków. \end{DoxyCompactList}\item 
+\hyperlink{class_b_list}{B\-List}$<$ unsigned $>$ \& \hyperlink{class_graph_afa24fcfb647f26c4685749cb2415f65d}{vertices} ()
+\begin{DoxyCompactList}\small\item\em Zwraca listę wierzchołków. \end{DoxyCompactList}\item 
+int \& \hyperlink{class_graph_a8964ae826a9323ec3fd565dd3a90be24}{max\-N} ()
+\begin{DoxyCompactList}\small\item\em Podaje maksymalną liczbę wierzchołków. \end{DoxyCompactList}\item 
+void \hyperlink{class_graph_a8401c9a52f79166e118653cb40416764}{Print} ()
+\begin{DoxyCompactList}\small\item\em Drukuje krawędzie grafu. \end{DoxyCompactList}\item 
+void \hyperlink{class_graph_a8cc0bbeb0a745a071bf9f8caa4822889}{B\-F\-S} (unsigned i)
+\begin{DoxyCompactList}\small\item\em Przechodzi graf wszerz Wykorzystuje implementację kolejki. \end{DoxyCompactList}\item 
+void \hyperlink{class_graph_a799822f4b278f1ef2024a4d26a3c1c93}{D\-F\-S} (unsigned i)
+\begin{DoxyCompactList}\small\item\em Przechodzi graf wgłąb Wykorzystuje implementację stosu. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsubsection*{Atrybuty chronione}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_b_list}{B\-List}$<$ unsigned $>$ \hyperlink{class_graph_ab2e9947e838cf65a60dfa3ec57367c45}{V}
+\item 
+\hyperlink{class_b_list}{B\-List}$<$ unsigned $>$ $\ast$ \hyperlink{class_graph_a666d457e13e81f8101235eb28f7f9d5a}{Adj}
+\item 
+int \hyperlink{class_graph_ae9cf5ba4841d02a2746033b68bd38764}{N}
+\end{DoxyCompactItemize}
+
+
+\subsubsection{Opis szczegółowy}
+
+
+Definicja w linii 15 pliku Graph.\-hh.
+
+
+
+\subsubsection{Dokumentacja konstruktora i destruktora}
+\hypertarget{class_graph_ae4c72b8ac4d693c49800a4c7e273654f}{\index{Graph@{Graph}!Graph@{Graph}}
+\index{Graph@{Graph}!Graph@{Graph}}
+\paragraph[{Graph}]{\setlength{\rightskip}{0pt plus 5cm}Graph\-::\-Graph (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_graph_ae4c72b8ac4d693c49800a4c7e273654f}
+
+
+Konstruktor grafu. 
+
+Inicjuje graf poprzez utworzenie tablicy list sąsiedztwa. Domyślnie 10 wierzchołków. 
+
+Definicja w linii 118 pliku Graph.\-hh.
+
+\hypertarget{class_graph_a4112e28d02c5b96ff903e0c5ef23f754}{\index{Graph@{Graph}!Graph@{Graph}}
+\index{Graph@{Graph}!Graph@{Graph}}
+\paragraph[{Graph}]{\setlength{\rightskip}{0pt plus 5cm}Graph\-::\-Graph (
+\begin{DoxyParamCaption}
+\item[{int}]{problem\-Size}
+\end{DoxyParamCaption}
+)}}\label{class_graph_a4112e28d02c5b96ff903e0c5ef23f754}
+
+
+Konstruktor grafu. 
+
+Inicjuje graf poprzez utworzenie tablicy list sąsiedztwa dla podanej liczby wierzchołków. 
+\begin{DoxyParams}[1]{Parametry}
+\mbox{\tt in}  & {\em problem\-Size} & -\/ liczba wierzchołków \\
+\hline
+\end{DoxyParams}
+
+
+Definicja w linii 124 pliku Graph.\-hh.
+
+\hypertarget{class_graph_a902c5b3eacb66d60752525ab23297a95}{\index{Graph@{Graph}!$\sim$\-Graph@{$\sim$\-Graph}}
+\index{$\sim$\-Graph@{$\sim$\-Graph}!Graph@{Graph}}
+\paragraph[{$\sim$\-Graph}]{\setlength{\rightskip}{0pt plus 5cm}Graph\-::$\sim$\-Graph (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_graph_a902c5b3eacb66d60752525ab23297a95}
+
+
+Destruktor grafu. 
+
+Zwalnia pamięć zajmowaną przez tablicę list sąsiedztwa. Wywołuje destruktor listy wierzchołków. 
+
+Definicja w linii 130 pliku Graph.\-hh.
+
+
+
+\subsubsection{Dokumentacja funkcji składowych}
+\hypertarget{class_graph_a6e15151dd48dbc8d88e9c69b9da1ce42}{\index{Graph@{Graph}!are\-Adjacent@{are\-Adjacent}}
+\index{are\-Adjacent@{are\-Adjacent}!Graph@{Graph}}
+\paragraph[{are\-Adjacent}]{\setlength{\rightskip}{0pt plus 5cm}bool Graph\-::are\-Adjacent (
+\begin{DoxyParamCaption}
+\item[{unsigned}]{i, }
+\item[{unsigned}]{j}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_graph_a6e15151dd48dbc8d88e9c69b9da1ce42}
+
+
+Sprawdza, czy wierzchołki są sąsiadujące Szuka wierzchołka j na liście sąsiedztwa wierzchołka i. 
+
+
+\begin{DoxyParams}[1]{Parametry}
+\mbox{\tt in}  & {\em i} & -\/ wierzchołek pierwszy \\
+\hline
+\mbox{\tt in}  & {\em j} & -\/ wierzchołek druga \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Zwracane wartości}
+{\em true} & -\/ jeśli są sąsiednie \\
+\hline
+{\em false} & -\/ jeśli nie są sąsiednie \\
+\hline
+\end{DoxyRetVals}
+
+
+Implementuje \hyperlink{class_i_graph_a8562d602c3d98fa3bd483ca033806833}{I\-Graph}.
+
+
+
+Definicja w linii 147 pliku Graph.\-hh.
+
+\hypertarget{class_graph_a8cc0bbeb0a745a071bf9f8caa4822889}{\index{Graph@{Graph}!B\-F\-S@{B\-F\-S}}
+\index{B\-F\-S@{B\-F\-S}!Graph@{Graph}}
+\paragraph[{B\-F\-S}]{\setlength{\rightskip}{0pt plus 5cm}void Graph\-::\-B\-F\-S (
+\begin{DoxyParamCaption}
+\item[{unsigned}]{i}
+\end{DoxyParamCaption}
+)}}\label{class_graph_a8cc0bbeb0a745a071bf9f8caa4822889}
+
+
+Przechodzi graf wszerz Wykorzystuje implementację kolejki. 
+
+
+\begin{DoxyParams}[1]{Parametry}
+\mbox{\tt in}  & {\em i} & -\/ numer wierzchołka startowego \\
+\hline
+\end{DoxyParams}
+
+
+Definicja w linii 185 pliku Graph.\-hh.
+
+\hypertarget{class_graph_a799822f4b278f1ef2024a4d26a3c1c93}{\index{Graph@{Graph}!D\-F\-S@{D\-F\-S}}
+\index{D\-F\-S@{D\-F\-S}!Graph@{Graph}}
+\paragraph[{D\-F\-S}]{\setlength{\rightskip}{0pt plus 5cm}void Graph\-::\-D\-F\-S (
+\begin{DoxyParamCaption}
+\item[{unsigned}]{i}
+\end{DoxyParamCaption}
+)}}\label{class_graph_a799822f4b278f1ef2024a4d26a3c1c93}
+
+
+Przechodzi graf wgłąb Wykorzystuje implementację stosu. 
+
+
+\begin{DoxyParams}[1]{Parametry}
+\mbox{\tt in}  & {\em i} & -\/ numer wierzchołka startowego \\
+\hline
+\end{DoxyParams}
+
+
+Definicja w linii 219 pliku Graph.\-hh.
+
+\hypertarget{class_graph_adcd035a684543785d45f5e595e642d04}{\index{Graph@{Graph}!insert\-Edge@{insert\-Edge}}
+\index{insert\-Edge@{insert\-Edge}!Graph@{Graph}}
+\paragraph[{insert\-Edge}]{\setlength{\rightskip}{0pt plus 5cm}void Graph\-::insert\-Edge (
+\begin{DoxyParamCaption}
+\item[{unsigned}]{i, }
+\item[{unsigned}]{j, }
+\item[{unsigned}]{w = {\ttfamily 1}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_graph_adcd035a684543785d45f5e595e642d04}
+
+
+Dodaje krawędź Dodaje wpisy na listach sąsiedztwa dla obu wierzchołków. 
+
+
+\begin{DoxyParams}[1]{Parametry}
+\mbox{\tt in}  & {\em i} & -\/ numer wierzchołka pierwszego \\
+\hline
+\mbox{\tt in}  & {\em j} & -\/ numer wierzchołka drugiego \\
+\hline
+\mbox{\tt in}  & {\em w} & -\/ waga krawędzi \\
+\hline
+\end{DoxyParams}
+
+
+Implementuje \hyperlink{class_i_graph_a95fca9dcbc82ef1c20d15b51d015b847}{I\-Graph}.
+
+
+
+Definicja w linii 162 pliku Graph.\-hh.
+
+\hypertarget{class_graph_a2fbe0e22365c6ca537ad58cc41f762d3}{\index{Graph@{Graph}!insert\-Vertex@{insert\-Vertex}}
+\index{insert\-Vertex@{insert\-Vertex}!Graph@{Graph}}
+\paragraph[{insert\-Vertex}]{\setlength{\rightskip}{0pt plus 5cm}void Graph\-::insert\-Vertex (
+\begin{DoxyParamCaption}
+\item[{unsigned}]{i}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_graph_a2fbe0e22365c6ca537ad58cc41f762d3}
+
+
+Dodaje wierzchołek Dodaje do listy wierzchołków. 
+
+
+\begin{DoxyParams}[1]{Parametry}
+\mbox{\tt in}  & {\em i} & -\/ numer wierzchołka \\
+\hline
+\end{DoxyParams}
+
+
+Implementuje \hyperlink{class_i_graph_a78668f8067a9a0d108bfc4ef719ba206}{I\-Graph}.
+
+
+
+Definicja w linii 156 pliku Graph.\-hh.
+
+\hypertarget{class_graph_a8964ae826a9323ec3fd565dd3a90be24}{\index{Graph@{Graph}!max\-N@{max\-N}}
+\index{max\-N@{max\-N}!Graph@{Graph}}
+\paragraph[{max\-N}]{\setlength{\rightskip}{0pt plus 5cm}int\& Graph\-::max\-N (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_graph_a8964ae826a9323ec3fd565dd3a90be24}
+
+
+Podaje maksymalną liczbę wierzchołków. 
+
+\begin{DoxyReturn}{Zwraca}
+rozmiar tablicy list sąsiedztwa 
+\end{DoxyReturn}
+
+
+Definicja w linii 96 pliku Graph.\-hh.
+
+\hypertarget{class_graph_a7ba4e8932750650f1aa0ffac47ef6d53}{\index{Graph@{Graph}!neighbours@{neighbours}}
+\index{neighbours@{neighbours}!Graph@{Graph}}
+\paragraph[{neighbours}]{\setlength{\rightskip}{0pt plus 5cm}{\bf B\-List}$<$ unsigned $>$ $\ast$ Graph\-::neighbours (
+\begin{DoxyParamCaption}
+\item[{unsigned}]{i}
+\end{DoxyParamCaption}
+)}}\label{class_graph_a7ba4e8932750650f1aa0ffac47ef6d53}
+
+
+Podaje listę sąsiedztwa danego wierzchołka. 
+
+
+\begin{DoxyParams}[1]{Parametry}
+\mbox{\tt in}  & {\em i} & -\/ wierzchołek, którego lista sąsiedztwa ma być zwrócona \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Zwraca}
+wskaźnik na lista sąsiedztwa podanego wierzchołka 
+\end{DoxyReturn}
+
+
+Definicja w linii 139 pliku Graph.\-hh.
+
+\hypertarget{class_graph_a8401c9a52f79166e118653cb40416764}{\index{Graph@{Graph}!Print@{Print}}
+\index{Print@{Print}!Graph@{Graph}}
+\paragraph[{Print}]{\setlength{\rightskip}{0pt plus 5cm}void Graph\-::\-Print (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_graph_a8401c9a52f79166e118653cb40416764}
+
+
+Drukuje krawędzie grafu. 
+
+
+
+Definicja w linii 175 pliku Graph.\-hh.
+
+\hypertarget{class_graph_afa24fcfb647f26c4685749cb2415f65d}{\index{Graph@{Graph}!vertices@{vertices}}
+\index{vertices@{vertices}!Graph@{Graph}}
+\paragraph[{vertices}]{\setlength{\rightskip}{0pt plus 5cm}{\bf B\-List}$<$unsigned$>$\& Graph\-::vertices (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_graph_afa24fcfb647f26c4685749cb2415f65d}
+
+
+Zwraca listę wierzchołków. 
+
+\begin{DoxyReturn}{Zwraca}
+lista sąsiedztwa podanego wierzchołka 
+\end{DoxyReturn}
+
+
+Definicja w linii 90 pliku Graph.\-hh.
+
+
+
+\subsubsection{Dokumentacja atrybutów składowych}
+\hypertarget{class_graph_a666d457e13e81f8101235eb28f7f9d5a}{\index{Graph@{Graph}!Adj@{Adj}}
+\index{Adj@{Adj}!Graph@{Graph}}
+\paragraph[{Adj}]{\setlength{\rightskip}{0pt plus 5cm}{\bf B\-List}$<$unsigned$>$$\ast$ Graph\-::\-Adj\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_graph_a666d457e13e81f8101235eb28f7f9d5a}
+-\/$>$ lista wierzchołków 
+
+Definicja w linii 19 pliku Graph.\-hh.
+
+\hypertarget{class_graph_ae9cf5ba4841d02a2746033b68bd38764}{\index{Graph@{Graph}!N@{N}}
+\index{N@{N}!Graph@{Graph}}
+\paragraph[{N}]{\setlength{\rightskip}{0pt plus 5cm}int Graph\-::\-N\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_graph_ae9cf5ba4841d02a2746033b68bd38764}
+-\/$>$ tablica list sąsiedztwa 
+
+Definicja w linii 20 pliku Graph.\-hh.
+
+\hypertarget{class_graph_ab2e9947e838cf65a60dfa3ec57367c45}{\index{Graph@{Graph}!V@{V}}
+\index{V@{V}!Graph@{Graph}}
+\paragraph[{V}]{\setlength{\rightskip}{0pt plus 5cm}{\bf B\-List}$<$unsigned$>$ Graph\-::\-V\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_graph_ab2e9947e838cf65a60dfa3ec57367c45}
+
+
+Definicja w linii 18 pliku Graph.\-hh.
+
+
+
+Dokumentacja dla tej klasy została wygenerowana z pliku\-:\begin{DoxyCompactItemize}
+\item 
+prj/inc/\hyperlink{_graph_8hh}{Graph.\-hh}\end{DoxyCompactItemize}

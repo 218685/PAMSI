@@ -1,0 +1,131 @@
+\hypertarget{class_graph___test}{\subsection{Dokumentacja szablonu klasy Graph\-\_\-\-Test$<$ Object $>$}
+\label{class_graph___test}\index{Graph\-\_\-\-Test$<$ Object $>$@{Graph\-\_\-\-Test$<$ Object $>$}}
+}
+
+
+Szablonowa klasa implementująca testowy graf.  
+
+
+
+
+{\ttfamily \#include $<$Graph\-\_\-\-Test.\-hh$>$}
+
+
+
+Diagram dziedziczenia dla Graph\-\_\-\-Test$<$ Object $>$
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=249pt]{class_graph___test__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Diagram współpracy dla Graph\-\_\-\-Test$<$ Object $>$\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=266pt]{class_graph___test__coll__graph}
+\end{center}
+\end{figure}
+\subsubsection*{Metody publiczne}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_graph___test_aa82baee1265ff1172c802b1fdfdf1290}{change\-Search\-Type} (char type)
+\begin{DoxyCompactList}\small\item\em Zmienia sposób przechodzenia grafu. \end{DoxyCompactList}\item 
+virtual bool \hyperlink{class_graph___test_acbad8d61bca15e38751e9877c3bfe70d}{Prepare} (Object parametr)
+\begin{DoxyCompactList}\small\item\em Metoda przygotowująca graf W zależności od podanej liczby, dodaje odpowiednio dużo wierzchołków do grafu i tworzy między nimi spójne powiązanie. W następujący sposób\-: tworzy tymczasową tablicę z numerami wierzchołków i następnie losowo zamienia komórki tablicy. Następnie dodaje krawędzie zgodnie z wylosowaną kolejnością. Na koniec generuje 2n losowych krawędzi. \end{DoxyCompactList}\item 
+virtual bool \hyperlink{class_graph___test_a1f7ecb202fa8d6f02fc2639b9af2ee4a}{Run} ()
+\begin{DoxyCompactList}\small\item\em Metoda uruchamiająca przejście grafu W zależności od ustawienia parametru search\-Type, uruchamia przejście B\-F\-S lub D\-F\-S. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsubsection*{Dodatkowe Dziedziczone Składowe}
+
+
+\subsubsection{Opis szczegółowy}
+\subsubsection*{template$<$typename Object$>$class Graph\-\_\-\-Test$<$ Object $>$}
+
+Szablonowa klasa implementująca testowy graf. 
+
+Definicja w linii 17 pliku Graph\-\_\-\-Test.\-hh.
+
+
+
+\subsubsection{Dokumentacja funkcji składowych}
+\hypertarget{class_graph___test_aa82baee1265ff1172c802b1fdfdf1290}{\index{Graph\-\_\-\-Test@{Graph\-\_\-\-Test}!change\-Search\-Type@{change\-Search\-Type}}
+\index{change\-Search\-Type@{change\-Search\-Type}!Graph_Test@{Graph\-\_\-\-Test}}
+\paragraph[{change\-Search\-Type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Object $>$ void {\bf Graph\-\_\-\-Test}$<$ Object $>$\-::change\-Search\-Type (
+\begin{DoxyParamCaption}
+\item[{char}]{type}
+\end{DoxyParamCaption}
+)}}\label{class_graph___test_aa82baee1265ff1172c802b1fdfdf1290}
+
+
+Zmienia sposób przechodzenia grafu. 
+
+Ustawia podany typ znakowy jako wyznacznik przejścia grafu metodą B\-F\-S lub D\-F\-S. 
+
+Definicja w linii 56 pliku Graph\-\_\-\-Test.\-hh.
+
+\hypertarget{class_graph___test_acbad8d61bca15e38751e9877c3bfe70d}{\index{Graph\-\_\-\-Test@{Graph\-\_\-\-Test}!Prepare@{Prepare}}
+\index{Prepare@{Prepare}!Graph_Test@{Graph\-\_\-\-Test}}
+\paragraph[{Prepare}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Object $>$ bool {\bf Graph\-\_\-\-Test}$<$ Object $>$\-::Prepare (
+\begin{DoxyParamCaption}
+\item[{Object}]{parametr}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_graph___test_acbad8d61bca15e38751e9877c3bfe70d}
+
+
+Metoda przygotowująca graf W zależności od podanej liczby, dodaje odpowiednio dużo wierzchołków do grafu i tworzy między nimi spójne powiązanie. W następujący sposób\-: tworzy tymczasową tablicę z numerami wierzchołków i następnie losowo zamienia komórki tablicy. Następnie dodaje krawędzie zgodnie z wylosowaną kolejnością. Na koniec generuje 2n losowych krawędzi. 
+
+
+\begin{DoxyParams}[1]{Parametry}
+\mbox{\tt in}  & {\em parametr} & -\/ liczba wierzchołków \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Zwracane wartości}
+{\em true} & -\/ jeśli operacja zakończyła się pomyślnie \\
+\hline
+{\em false} & -\/ jeśli wystąpił jakiś błąd \\
+\hline
+\end{DoxyRetVals}
+
+
+Implementuje \hyperlink{class_i_runnable_a25fb85d8692bfedad61b81f875c6e358}{I\-Runnable$<$ Object $>$}.
+
+
+
+Definicja w linii 62 pliku Graph\-\_\-\-Test.\-hh.
+
+\hypertarget{class_graph___test_a1f7ecb202fa8d6f02fc2639b9af2ee4a}{\index{Graph\-\_\-\-Test@{Graph\-\_\-\-Test}!Run@{Run}}
+\index{Run@{Run}!Graph_Test@{Graph\-\_\-\-Test}}
+\paragraph[{Run}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Object $>$ bool {\bf Graph\-\_\-\-Test}$<$ Object $>$\-::Run (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_graph___test_a1f7ecb202fa8d6f02fc2639b9af2ee4a}
+
+
+Metoda uruchamiająca przejście grafu W zależności od ustawienia parametru search\-Type, uruchamia przejście B\-F\-S lub D\-F\-S. 
+
+
+\begin{DoxyRetVals}{Zwracane wartości}
+{\em true} & -\/ jeśli operacja zakończyła się pomyślnie \\
+\hline
+{\em false} & -\/ jeśli wystąpił jakiś błąd \\
+\hline
+\end{DoxyRetVals}
+
+
+Implementuje \hyperlink{class_i_runnable_aff6851ded59d477d30c2ef01664b25fe}{I\-Runnable$<$ Object $>$}.
+
+
+
+Definicja w linii 101 pliku Graph\-\_\-\-Test.\-hh.
+
+
+
+Dokumentacja dla tej klasy została wygenerowana z pliku\-:\begin{DoxyCompactItemize}
+\item 
+prj/inc/\hyperlink{_graph___test_8hh}{Graph\-\_\-\-Test.\-hh}\end{DoxyCompactItemize}

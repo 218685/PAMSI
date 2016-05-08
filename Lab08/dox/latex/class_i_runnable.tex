@@ -1,0 +1,102 @@
+\hypertarget{class_i_runnable}{\subsection{Dokumentacja szablonu klasy I\-Runnable$<$ Object $>$}
+\label{class_i_runnable}\index{I\-Runnable$<$ Object $>$@{I\-Runnable$<$ Object $>$}}
+}
+
+
+Klasa szablonowa modelująca interfejs \char`\"{}\-Biegacza\char`\"{}.  
+
+
+
+
+{\ttfamily \#include $<$I\-Runnable.\-hh$>$}
+
+
+
+Diagram dziedziczenia dla I\-Runnable$<$ Object $>$
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=194pt]{class_i_runnable__inherit__graph}
+\end{center}
+\end{figure}
+\subsubsection*{Metody publiczne}
+\begin{DoxyCompactItemize}
+\item 
+virtual bool \hyperlink{class_i_runnable_a25fb85d8692bfedad61b81f875c6e358}{Prepare} (Object parametr)=0
+\begin{DoxyCompactList}\small\item\em Metoda przygotowująca obiekt do operacji. \end{DoxyCompactList}\item 
+virtual bool \hyperlink{class_i_runnable_aff6851ded59d477d30c2ef01664b25fe}{Run} ()=0
+\begin{DoxyCompactList}\small\item\em Metoda uruchamiająca zdefiniowaną operację \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsubsection{Opis szczegółowy}
+\subsubsection*{template$<$typename Object$>$class I\-Runnable$<$ Object $>$}
+
+Klasa szablonowa modelująca interfejs \char`\"{}\-Biegacza\char`\"{}. 
+
+Klasa jest abstrakcyjnym uogólnieniem obiektu, na którym można wykonać zdefiniowane operacje, którym z kolei można zmierzyć czas wykonywania. 
+
+Definicja w linii 22 pliku I\-Runnable.\-hh.
+
+
+
+\subsubsection{Dokumentacja funkcji składowych}
+\hypertarget{class_i_runnable_a25fb85d8692bfedad61b81f875c6e358}{\index{I\-Runnable@{I\-Runnable}!Prepare@{Prepare}}
+\index{Prepare@{Prepare}!IRunnable@{I\-Runnable}}
+\paragraph[{Prepare}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Object $>$ virtual bool {\bf I\-Runnable}$<$ Object $>$\-::Prepare (
+\begin{DoxyParamCaption}
+\item[{Object}]{parametr}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{class_i_runnable_a25fb85d8692bfedad61b81f875c6e358}
+
+
+Metoda przygotowująca obiekt do operacji. 
+
+
+\begin{DoxyParams}[1]{Parametry}
+\mbox{\tt in}  & {\em rozmiar} & -\/ liczba elementów do przygotowania;\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Zwracane wartości}
+{\em true} & -\/ jeśli przygotowanie się powiodło \\
+\hline
+{\em false} & -\/ jeśli wystąpił jakiś błąd \\
+\hline
+\end{DoxyRetVals}
+
+
+Implementowany w \hyperlink{class_graph___test_acbad8d61bca15e38751e9877c3bfe70d}{Graph\-\_\-\-Test$<$ Object $>$}.
+
+\hypertarget{class_i_runnable_aff6851ded59d477d30c2ef01664b25fe}{\index{I\-Runnable@{I\-Runnable}!Run@{Run}}
+\index{Run@{Run}!IRunnable@{I\-Runnable}}
+\paragraph[{Run}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Object $>$ virtual bool {\bf I\-Runnable}$<$ Object $>$\-::Run (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{class_i_runnable_aff6851ded59d477d30c2ef01664b25fe}
+
+
+Metoda uruchamiająca zdefiniowaną operację 
+
+
+\begin{DoxyParams}[1]{Parametry}
+\mbox{\tt in}  & {\em track} & -\/ parametr wykonania operacji \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Zwracane wartości}
+{\em true} & -\/ jeśli operacja zakończyła się pomyślnie \\
+\hline
+{\em false} & -\/ jeśli wystąpił jakiś błąd \\
+\hline
+\end{DoxyRetVals}
+
+
+Implementowany w \hyperlink{class_graph___test_a1f7ecb202fa8d6f02fc2639b9af2ee4a}{Graph\-\_\-\-Test$<$ Object $>$}.
+
+
+
+Dokumentacja dla tej klasy została wygenerowana z pliku\-:\begin{DoxyCompactItemize}
+\item 
+prj/inc/\hyperlink{_i_runnable_8hh}{I\-Runnable.\-hh}\end{DoxyCompactItemize}

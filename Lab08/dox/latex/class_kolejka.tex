@@ -1,0 +1,191 @@
+\hypertarget{class_kolejka}{\subsection{Dokumentacja szablonu klasy Kolejka$<$ Object $>$}
+\label{class_kolejka}\index{Kolejka$<$ Object $>$@{Kolejka$<$ Object $>$}}
+}
+
+
+Klasa szablonowa implementująca kolejkę  
+
+
+
+
+{\ttfamily \#include $<$Kolejka.\-hh$>$}
+
+
+
+Diagram dziedziczenia dla Kolejka$<$ Object $>$
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=174pt]{class_kolejka__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Diagram współpracy dla Kolejka$<$ Object $>$\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=174pt]{class_kolejka__coll__graph}
+\end{center}
+\end{figure}
+\subsubsection*{Metody publiczne}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_kolejka_acba6bee79d22a4e0de01f1ad169d3889}{Kolejka} ()
+\begin{DoxyCompactList}\small\item\em Konstruktor bezargumentowy kolejki. \end{DoxyCompactList}\item 
+\hyperlink{class_kolejka_a145c1e99eea786ec7832bdc467048a2d}{$\sim$\-Kolejka} ()
+\begin{DoxyCompactList}\small\item\em Destruktor kolejki. \end{DoxyCompactList}\item 
+virtual bool \hyperlink{class_kolejka_a15a8e2eff269ee2d6264af30cfd23cb2}{Is\-Empty} ()
+\begin{DoxyCompactList}\small\item\em Metoda sprawdzająca, czy kolejka jest pusta. \end{DoxyCompactList}\item 
+virtual Object \hyperlink{class_kolejka_a04e41ef06540e8a5f5338da175f26a1f}{Front} ()
+\begin{DoxyCompactList}\small\item\em Metoda zwracająca pierwszy element kolejki. \end{DoxyCompactList}\item 
+virtual void \hyperlink{class_kolejka_a726ad18814137293bfdfd0500da27038}{Enqueue} (Object item)
+\begin{DoxyCompactList}\small\item\em Metoda dodająca element do kolejki. \end{DoxyCompactList}\item 
+virtual Object \hyperlink{class_kolejka_a61f6ec1436c1e95ce8675c8ccaf3e469}{Dequeue} ()
+\begin{DoxyCompactList}\small\item\em Metoda usuwająca element kolejki. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsubsection{Opis szczegółowy}
+\subsubsection*{template$<$typename Object$>$class Kolejka$<$ Object $>$}
+
+Klasa szablonowa implementująca kolejkę 
+
+\hyperlink{class_kolejka}{Kolejka} zbudowana jest w oparciu o dynamiczną tablicę.
+
+\hyperlink{class_kolejka}{Kolejka} może przechowywać dowolny typ danych dzięki zastosowaniu szablonu. 
+
+Definicja w linii 24 pliku Kolejka.\-hh.
+
+
+
+\subsubsection{Dokumentacja konstruktora i destruktora}
+\hypertarget{class_kolejka_acba6bee79d22a4e0de01f1ad169d3889}{\index{Kolejka@{Kolejka}!Kolejka@{Kolejka}}
+\index{Kolejka@{Kolejka}!Kolejka@{Kolejka}}
+\paragraph[{Kolejka}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Object $>$ {\bf Kolejka}$<$ Object $>$\-::{\bf Kolejka} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_kolejka_acba6bee79d22a4e0de01f1ad169d3889}
+
+
+Konstruktor bezargumentowy kolejki. 
+
+Inicjuje Kolejkę poprzez zaalokowanie tablicy o rozmiarze 1. Ustawia indeksy f (front) i r (rear) na 0. 
+
+Definicja w linii 90 pliku Kolejka.\-hh.
+
+\hypertarget{class_kolejka_a145c1e99eea786ec7832bdc467048a2d}{\index{Kolejka@{Kolejka}!$\sim$\-Kolejka@{$\sim$\-Kolejka}}
+\index{$\sim$\-Kolejka@{$\sim$\-Kolejka}!Kolejka@{Kolejka}}
+\paragraph[{$\sim$\-Kolejka}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Object $>$ {\bf Kolejka}$<$ Object $>$\-::$\sim${\bf Kolejka} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_kolejka_a145c1e99eea786ec7832bdc467048a2d}
+
+
+Destruktor kolejki. 
+
+Zwalnia pamięć zajmowaną przez kolejkę. Ustawia wskaźnik tablicy na N\-U\-L\-L. 
+
+Definicja w linii 96 pliku Kolejka.\-hh.
+
+
+
+\subsubsection{Dokumentacja funkcji składowych}
+\hypertarget{class_kolejka_a61f6ec1436c1e95ce8675c8ccaf3e469}{\index{Kolejka@{Kolejka}!Dequeue@{Dequeue}}
+\index{Dequeue@{Dequeue}!Kolejka@{Kolejka}}
+\paragraph[{Dequeue}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Object $>$ Object {\bf Kolejka}$<$ Object $>$\-::Dequeue (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_kolejka_a61f6ec1436c1e95ce8675c8ccaf3e469}
+
+
+Metoda usuwająca element kolejki. 
+
+Sprawdza, czy kolejka jest pusta. Jeśli tak, wyrzuca wyjątek. Jeśli nie, usuwa element z początki kolejki o indeksie f (front), a następnie przesuwa indeks f o jedno miejsce dalej. \begin{DoxyReturn}{Zwraca}
+pierwszy element kolejki 
+\end{DoxyReturn}
+
+
+Implementuje \hyperlink{class_i_queue_a6836f64bdf7102fdda590f21f7e5e208}{I\-Queue$<$ Object $>$}.
+
+
+
+Definicja w linii 131 pliku Kolejka.\-hh.
+
+\hypertarget{class_kolejka_a726ad18814137293bfdfd0500da27038}{\index{Kolejka@{Kolejka}!Enqueue@{Enqueue}}
+\index{Enqueue@{Enqueue}!Kolejka@{Kolejka}}
+\paragraph[{Enqueue}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Object $>$ void {\bf Kolejka}$<$ Object $>$\-::Enqueue (
+\begin{DoxyParamCaption}
+\item[{Object}]{item}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_kolejka_a726ad18814137293bfdfd0500da27038}
+
+
+Metoda dodająca element do kolejki. 
+
+Ustawia element na koniec kolejki
+\begin{DoxyItemize}
+\item komórka tablicy o indeksie r (rear). Jeśli nie ma już miejsca w kolejce tablica jest powiększana 2 razy. Następnie element zostaje prawidłowo dodany do kolejki, a indeks r zostaje przesunięty o jedno miejsce dalej. 
+\begin{DoxyParams}[1]{Parametry}
+\mbox{\tt in}  & {\em item} & -\/ element do dodania \\
+\hline
+\end{DoxyParams}
+
+\end{DoxyItemize}
+
+Implementuje \hyperlink{class_i_queue_af818d0fb70a5d088e6088c42f51df7e1}{I\-Queue$<$ Object $>$}.
+
+
+
+Definicja w linii 118 pliku Kolejka.\-hh.
+
+\hypertarget{class_kolejka_a04e41ef06540e8a5f5338da175f26a1f}{\index{Kolejka@{Kolejka}!Front@{Front}}
+\index{Front@{Front}!Kolejka@{Kolejka}}
+\paragraph[{Front}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Object $>$ Object {\bf Kolejka}$<$ Object $>$\-::Front (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_kolejka_a04e41ef06540e8a5f5338da175f26a1f}
+
+
+Metoda zwracająca pierwszy element kolejki. 
+
+Jeśli kolejka jest pusta, wyrzuca wyjątek. Zwraca element tablicy o indeksie f (front). \begin{DoxyReturn}{Zwraca}
+pierwszy element kolejki 
+\end{DoxyReturn}
+
+
+Implementuje \hyperlink{class_i_queue_ab07e072ad92e4e93d57a0d3950c72764}{I\-Queue$<$ Object $>$}.
+
+
+
+Definicja w linii 109 pliku Kolejka.\-hh.
+
+\hypertarget{class_kolejka_a15a8e2eff269ee2d6264af30cfd23cb2}{\index{Kolejka@{Kolejka}!Is\-Empty@{Is\-Empty}}
+\index{Is\-Empty@{Is\-Empty}!Kolejka@{Kolejka}}
+\paragraph[{Is\-Empty}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Object $>$ bool {\bf Kolejka}$<$ Object $>$\-::Is\-Empty (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_kolejka_a15a8e2eff269ee2d6264af30cfd23cb2}
+
+
+Metoda sprawdzająca, czy kolejka jest pusta. 
+
+\hyperlink{class_kolejka}{Kolejka} jest pusta, jeśli wartości indeksów f (front) i r (rear) są sobie równe.  true -\/ jeśli lista jest pusta  false -\/ jeśli nie jest pusta 
+
+Implementuje \hyperlink{class_i_queue_ae1c9e42be6ff647666c4468d3eec55a1}{I\-Queue$<$ Object $>$}.
+
+
+
+Definicja w linii 103 pliku Kolejka.\-hh.
+
+
+
+Dokumentacja dla tej klasy została wygenerowana z pliku\-:\begin{DoxyCompactItemize}
+\item 
+prj/inc/\hyperlink{_kolejka_8hh}{Kolejka.\-hh}\end{DoxyCompactItemize}

@@ -1,0 +1,118 @@
+\hypertarget{class_stopwatch}{\subsection{Dokumentacja klasy Stopwatch}
+\label{class_stopwatch}\index{Stopwatch@{Stopwatch}}
+}
+
+
+Klasa implementująca podstawowy stoper.  
+
+
+
+
+{\ttfamily \#include $<$Stopwatch.\-hh$>$}
+
+
+
+Diagram dziedziczenia dla Stopwatch
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=186pt]{class_stopwatch__inherit__graph}
+\end{center}
+\end{figure}
+\subsubsection*{Metody publiczne}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \hyperlink{class_stopwatch_adb93923510f12409132445fc187d828f}{Start} ()
+\begin{DoxyCompactList}\small\item\em Rozpoczyna pomiar czasu. \end{DoxyCompactList}\item 
+virtual void \hyperlink{class_stopwatch_afb2754584ef39767d8182f2345cd9721}{Stop} ()
+\begin{DoxyCompactList}\small\item\em Kończy pomiar czasu. \end{DoxyCompactList}\item 
+virtual double \hyperlink{class_stopwatch_a65647fd3b6337c9d0c109e0b1ad293ea}{Get\-Elapsed\-Time} ()
+\begin{DoxyCompactList}\small\item\em Oblicza czas na podstawie pól klasy. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsubsection*{Atrybuty chronione}
+\begin{DoxyCompactItemize}
+\item 
+timeval \hyperlink{class_stopwatch_ac10760e0e0c54d4bdfbdb3dd9d4abb91}{start}
+\item 
+timeval \hyperlink{class_stopwatch_a3eb80a36c7adb793287c8858642014bc}{stop}
+\end{DoxyCompactItemize}
+
+
+\subsubsection{Opis szczegółowy}
+Klasa implementująca podstawowy stoper. 
+
+Klasa jest modelelem stopera z funkcjami start, stop i oblicz czas. 
+
+Definicja w linii 20 pliku Stopwatch.\-hh.
+
+
+
+\subsubsection{Dokumentacja funkcji składowych}
+\hypertarget{class_stopwatch_a65647fd3b6337c9d0c109e0b1ad293ea}{\index{Stopwatch@{Stopwatch}!Get\-Elapsed\-Time@{Get\-Elapsed\-Time}}
+\index{Get\-Elapsed\-Time@{Get\-Elapsed\-Time}!Stopwatch@{Stopwatch}}
+\paragraph[{Get\-Elapsed\-Time}]{\setlength{\rightskip}{0pt plus 5cm}double Stopwatch\-::\-Get\-Elapsed\-Time (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_stopwatch_a65647fd3b6337c9d0c109e0b1ad293ea}
+
+
+Oblicza czas na podstawie pól klasy. 
+
+Odejmuje wartości zapisane w polach stop i start. Daje wynik w mikrosekundach. 
+
+Definicja w linii 12 pliku Stopwatch.\-cpp.
+
+\hypertarget{class_stopwatch_adb93923510f12409132445fc187d828f}{\index{Stopwatch@{Stopwatch}!Start@{Start}}
+\index{Start@{Start}!Stopwatch@{Stopwatch}}
+\paragraph[{Start}]{\setlength{\rightskip}{0pt plus 5cm}void Stopwatch\-::\-Start (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_stopwatch_adb93923510f12409132445fc187d828f}
+
+
+Rozpoczyna pomiar czasu. 
+
+Przypisuje wynik metody gettimeofday() do pola start. 
+
+Definicja w linii 4 pliku Stopwatch.\-cpp.
+
+\hypertarget{class_stopwatch_afb2754584ef39767d8182f2345cd9721}{\index{Stopwatch@{Stopwatch}!Stop@{Stop}}
+\index{Stop@{Stop}!Stopwatch@{Stopwatch}}
+\paragraph[{Stop}]{\setlength{\rightskip}{0pt plus 5cm}void Stopwatch\-::\-Stop (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_stopwatch_afb2754584ef39767d8182f2345cd9721}
+
+
+Kończy pomiar czasu. 
+
+Przypisuje wynik metody gettimeofday() do pola stop. 
+
+Definicja w linii 8 pliku Stopwatch.\-cpp.
+
+
+
+\subsubsection{Dokumentacja atrybutów składowych}
+\hypertarget{class_stopwatch_ac10760e0e0c54d4bdfbdb3dd9d4abb91}{\index{Stopwatch@{Stopwatch}!start@{start}}
+\index{start@{start}!Stopwatch@{Stopwatch}}
+\paragraph[{start}]{\setlength{\rightskip}{0pt plus 5cm}timeval Stopwatch\-::start\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_stopwatch_ac10760e0e0c54d4bdfbdb3dd9d4abb91}
+
+
+Definicja w linii 23 pliku Stopwatch.\-hh.
+
+\hypertarget{class_stopwatch_a3eb80a36c7adb793287c8858642014bc}{\index{Stopwatch@{Stopwatch}!stop@{stop}}
+\index{stop@{stop}!Stopwatch@{Stopwatch}}
+\paragraph[{stop}]{\setlength{\rightskip}{0pt plus 5cm}timeval Stopwatch\-::stop\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_stopwatch_a3eb80a36c7adb793287c8858642014bc}
+struktury timeval start i stop 
+
+Definicja w linii 23 pliku Stopwatch.\-hh.
+
+
+
+Dokumentacja dla tej klasy została wygenerowana z plików\-:\begin{DoxyCompactItemize}
+\item 
+prj/inc/\hyperlink{_stopwatch_8hh}{Stopwatch.\-hh}\item 
+prj/src/\hyperlink{_stopwatch_8cpp}{Stopwatch.\-cpp}\end{DoxyCompactItemize}

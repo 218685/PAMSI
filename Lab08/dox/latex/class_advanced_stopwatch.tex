@@ -1,0 +1,283 @@
+\hypertarget{class_advanced_stopwatch}{\subsection{Dokumentacja klasy Advanced\-Stopwatch}
+\label{class_advanced_stopwatch}\index{Advanced\-Stopwatch@{Advanced\-Stopwatch}}
+}
+
+
+Klasa implementująca rozbudowany stoper.  
+
+
+
+
+{\ttfamily \#include $<$Advanced\-Stopwatch.\-hh$>$}
+
+
+
+Diagram dziedziczenia dla Advanced\-Stopwatch
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=186pt]{class_advanced_stopwatch__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Diagram współpracy dla Advanced\-Stopwatch\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=186pt]{class_advanced_stopwatch__coll__graph}
+\end{center}
+\end{figure}
+\subsubsection*{Metody publiczne}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_advanced_stopwatch_a2b43f9deab93398578e31205038d4f23}{Advanced\-Stopwatch} ()
+\item 
+\hyperlink{class_advanced_stopwatch_ab7f73fdeabf44c1557f27c6542099cd5}{$\sim$\-Advanced\-Stopwatch} ()
+\item 
+unsigned \& \hyperlink{class_advanced_stopwatch_ae4c7ec4341d3e7db1d75b704d1c75030}{Rozmiar} ()
+\item 
+bool \hyperlink{class_advanced_stopwatch_ad59c3b0557fc23c1cba33964259a6113}{Save\-Elapsed\-Time} (double rekord)
+\begin{DoxyCompactList}\small\item\em Metoda zapisująca wartość pomiaru czasu okrążenia. \end{DoxyCompactList}\item 
+double \hyperlink{class_advanced_stopwatch_a12a5049b736e3e394361f57221224b7e}{Series\-Average} ()
+\begin{DoxyCompactList}\small\item\em Metoda wyliczająca średni czas okrążenia. \end{DoxyCompactList}\item 
+bool \hyperlink{class_advanced_stopwatch_a559af3abdf7adbae5ef03f5d58b1b49c}{Save\-Average\-Time\-To\-Buffer} (double rekord)
+\begin{DoxyCompactList}\small\item\em Metoda zapisująca średni czas okrążenia do bufora plikowego. \end{DoxyCompactList}\item 
+void \hyperlink{class_advanced_stopwatch_ad05cc1b4240cd225ee92bec0d02cd6fd}{Print\-Elapsed\-Times} ()
+\begin{DoxyCompactList}\small\item\em Metoda wypisująca zawartość pamięci stopera. \end{DoxyCompactList}\item 
+void \hyperlink{class_advanced_stopwatch_a918c9a7a39e8984281e8dd531473183e}{Clean\-Elapsed\-Times} ()
+\begin{DoxyCompactList}\small\item\em Metoda usuwająca zawartość pamięci stopera. \end{DoxyCompactList}\item 
+void \hyperlink{class_advanced_stopwatch_a71d86e77bbd4e7e92da83a7e177b0925}{Clean\-File\-Buffer} ()
+\begin{DoxyCompactList}\small\item\em Metoda usuwająca zawartość bufora plikowego stopera. \end{DoxyCompactList}\item 
+bool \hyperlink{class_advanced_stopwatch_a36ceb90b161eccfbaecea8c193934d43}{Dump\-File\-Buffer} (string nazwa\-Pliku)
+\begin{DoxyCompactList}\small\item\em Metoda zapisująca zawartość bufora plikowego do pliku. \end{DoxyCompactList}\item 
+bool \hyperlink{class_advanced_stopwatch_a62b8dcebc84f7c35e742de1ca857f397}{Dump\-To\-File} (string nazwa\-Pliku, double rekord)
+\begin{DoxyCompactList}\small\item\em Metoda zapisująca pojedynczy rekord bufora plikowego do pliku. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsubsection*{Dodatkowe Dziedziczone Składowe}
+
+
+\subsubsection{Opis szczegółowy}
+Klasa implementująca rozbudowany stoper. 
+
+Klasa jest modelelem stopera z funkcją zapisu czasu okrążeń, liczeniem średniego czasu kilku okrążeń, zapisu zmierzonych czasów do pliku. 
+
+Definicja w linii 28 pliku Advanced\-Stopwatch.\-hh.
+
+
+
+\subsubsection{Dokumentacja konstruktora i destruktora}
+\hypertarget{class_advanced_stopwatch_a2b43f9deab93398578e31205038d4f23}{\index{Advanced\-Stopwatch@{Advanced\-Stopwatch}!Advanced\-Stopwatch@{Advanced\-Stopwatch}}
+\index{Advanced\-Stopwatch@{Advanced\-Stopwatch}!AdvancedStopwatch@{Advanced\-Stopwatch}}
+\paragraph[{Advanced\-Stopwatch}]{\setlength{\rightskip}{0pt plus 5cm}Advanced\-Stopwatch\-::\-Advanced\-Stopwatch (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_advanced_stopwatch_a2b43f9deab93398578e31205038d4f23}
+
+
+Definicja w linii 4 pliku Advanced\-Stopwatch.\-cpp.
+
+\hypertarget{class_advanced_stopwatch_ab7f73fdeabf44c1557f27c6542099cd5}{\index{Advanced\-Stopwatch@{Advanced\-Stopwatch}!$\sim$\-Advanced\-Stopwatch@{$\sim$\-Advanced\-Stopwatch}}
+\index{$\sim$\-Advanced\-Stopwatch@{$\sim$\-Advanced\-Stopwatch}!AdvancedStopwatch@{Advanced\-Stopwatch}}
+\paragraph[{$\sim$\-Advanced\-Stopwatch}]{\setlength{\rightskip}{0pt plus 5cm}Advanced\-Stopwatch\-::$\sim$\-Advanced\-Stopwatch (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_advanced_stopwatch_ab7f73fdeabf44c1557f27c6542099cd5}
+
+
+Definicja w linii 15 pliku Advanced\-Stopwatch.\-cpp.
+
+
+
+\subsubsection{Dokumentacja funkcji składowych}
+\hypertarget{class_advanced_stopwatch_a918c9a7a39e8984281e8dd531473183e}{\index{Advanced\-Stopwatch@{Advanced\-Stopwatch}!Clean\-Elapsed\-Times@{Clean\-Elapsed\-Times}}
+\index{Clean\-Elapsed\-Times@{Clean\-Elapsed\-Times}!AdvancedStopwatch@{Advanced\-Stopwatch}}
+\paragraph[{Clean\-Elapsed\-Times}]{\setlength{\rightskip}{0pt plus 5cm}void Advanced\-Stopwatch\-::\-Clean\-Elapsed\-Times (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_advanced_stopwatch_a918c9a7a39e8984281e8dd531473183e}
+
+
+Metoda usuwająca zawartość pamięci stopera. 
+
+
+
+Definicja w linii 66 pliku Advanced\-Stopwatch.\-cpp.
+
+\hypertarget{class_advanced_stopwatch_a71d86e77bbd4e7e92da83a7e177b0925}{\index{Advanced\-Stopwatch@{Advanced\-Stopwatch}!Clean\-File\-Buffer@{Clean\-File\-Buffer}}
+\index{Clean\-File\-Buffer@{Clean\-File\-Buffer}!AdvancedStopwatch@{Advanced\-Stopwatch}}
+\paragraph[{Clean\-File\-Buffer}]{\setlength{\rightskip}{0pt plus 5cm}void Advanced\-Stopwatch\-::\-Clean\-File\-Buffer (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_advanced_stopwatch_a71d86e77bbd4e7e92da83a7e177b0925}
+
+
+Metoda usuwająca zawartość bufora plikowego stopera. 
+
+
+
+Definicja w linii 74 pliku Advanced\-Stopwatch.\-cpp.
+
+\hypertarget{class_advanced_stopwatch_a36ceb90b161eccfbaecea8c193934d43}{\index{Advanced\-Stopwatch@{Advanced\-Stopwatch}!Dump\-File\-Buffer@{Dump\-File\-Buffer}}
+\index{Dump\-File\-Buffer@{Dump\-File\-Buffer}!AdvancedStopwatch@{Advanced\-Stopwatch}}
+\paragraph[{Dump\-File\-Buffer}]{\setlength{\rightskip}{0pt plus 5cm}bool Advanced\-Stopwatch\-::\-Dump\-File\-Buffer (
+\begin{DoxyParamCaption}
+\item[{string}]{nazwa\-Pliku}
+\end{DoxyParamCaption}
+)}}\label{class_advanced_stopwatch_a36ceb90b161eccfbaecea8c193934d43}
+
+
+Metoda zapisująca zawartość bufora plikowego do pliku. 
+
+Dokonuje zapisu rekordów w buforze do pliku. 
+\begin{DoxyParams}[1]{Parametry}
+\mbox{\tt in}  & {\em nazwa\-Pliku} & -\/ nazwa pliku, do którego mają zostać zapisane czasy \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Zwracane wartości}
+{\em true} & -\/ jeśli udało się zapisać \\
+\hline
+{\em false} & -\/ jeśli udało się zapisać \\
+\hline
+\end{DoxyRetVals}
+
+
+Definicja w linii 80 pliku Advanced\-Stopwatch.\-cpp.
+
+\hypertarget{class_advanced_stopwatch_a62b8dcebc84f7c35e742de1ca857f397}{\index{Advanced\-Stopwatch@{Advanced\-Stopwatch}!Dump\-To\-File@{Dump\-To\-File}}
+\index{Dump\-To\-File@{Dump\-To\-File}!AdvancedStopwatch@{Advanced\-Stopwatch}}
+\paragraph[{Dump\-To\-File}]{\setlength{\rightskip}{0pt plus 5cm}bool Advanced\-Stopwatch\-::\-Dump\-To\-File (
+\begin{DoxyParamCaption}
+\item[{string}]{nazwa\-Pliku, }
+\item[{double}]{rekord}
+\end{DoxyParamCaption}
+)}}\label{class_advanced_stopwatch_a62b8dcebc84f7c35e742de1ca857f397}
+
+
+Metoda zapisująca pojedynczy rekord bufora plikowego do pliku. 
+
+Dokonuje zapisu wybranego rekordu w buforze do pliku. 
+\begin{DoxyParams}[1]{Parametry}
+\mbox{\tt in}  & {\em nazwa\-Pliku} & -\/ nazwa pliku, do którego ma zostać zapisany czas \\
+\hline
+\mbox{\tt in}  & {\em rekord} & -\/ wartość pomiaru czasu, która ma być zapisana \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Zwracane wartości}
+{\em true} & -\/ jeśli udało się zapisać \\
+\hline
+{\em false} & -\/ jeśli udało się zapisać \\
+\hline
+\end{DoxyRetVals}
+
+
+Definicja w linii 98 pliku Advanced\-Stopwatch.\-cpp.
+
+\hypertarget{class_advanced_stopwatch_ad05cc1b4240cd225ee92bec0d02cd6fd}{\index{Advanced\-Stopwatch@{Advanced\-Stopwatch}!Print\-Elapsed\-Times@{Print\-Elapsed\-Times}}
+\index{Print\-Elapsed\-Times@{Print\-Elapsed\-Times}!AdvancedStopwatch@{Advanced\-Stopwatch}}
+\paragraph[{Print\-Elapsed\-Times}]{\setlength{\rightskip}{0pt plus 5cm}void Advanced\-Stopwatch\-::\-Print\-Elapsed\-Times (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_advanced_stopwatch_ad05cc1b4240cd225ee92bec0d02cd6fd}
+
+
+Metoda wypisująca zawartość pamięci stopera. 
+
+
+
+Definicja w linii 58 pliku Advanced\-Stopwatch.\-cpp.
+
+\hypertarget{class_advanced_stopwatch_ae4c7ec4341d3e7db1d75b704d1c75030}{\index{Advanced\-Stopwatch@{Advanced\-Stopwatch}!Rozmiar@{Rozmiar}}
+\index{Rozmiar@{Rozmiar}!AdvancedStopwatch@{Advanced\-Stopwatch}}
+\paragraph[{Rozmiar}]{\setlength{\rightskip}{0pt plus 5cm}unsigned\& Advanced\-Stopwatch\-::\-Rozmiar (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_advanced_stopwatch_ae4c7ec4341d3e7db1d75b704d1c75030}
+
+
+Definicja w linii 36 pliku Advanced\-Stopwatch.\-hh.
+
+\hypertarget{class_advanced_stopwatch_a559af3abdf7adbae5ef03f5d58b1b49c}{\index{Advanced\-Stopwatch@{Advanced\-Stopwatch}!Save\-Average\-Time\-To\-Buffer@{Save\-Average\-Time\-To\-Buffer}}
+\index{Save\-Average\-Time\-To\-Buffer@{Save\-Average\-Time\-To\-Buffer}!AdvancedStopwatch@{Advanced\-Stopwatch}}
+\paragraph[{Save\-Average\-Time\-To\-Buffer}]{\setlength{\rightskip}{0pt plus 5cm}bool Advanced\-Stopwatch\-::\-Save\-Average\-Time\-To\-Buffer (
+\begin{DoxyParamCaption}
+\item[{double}]{rekord}
+\end{DoxyParamCaption}
+)}}\label{class_advanced_stopwatch_a559af3abdf7adbae5ef03f5d58b1b49c}
+
+
+Metoda zapisująca średni czas okrążenia do bufora plikowego. 
+
+Dodaje podany czas do pamięci stopera, z której można dokonać zapisu do pliku. 
+\begin{DoxyParams}[1]{Parametry}
+\mbox{\tt in}  & {\em rekord} & -\/ wartość pomiaru czasu \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Zwracane wartości}
+{\em true} & -\/ jeśli udało się zapisać \\
+\hline
+{\em false} & -\/ jeśli udało się zapisać \\
+\hline
+\end{DoxyRetVals}
+
+
+Definicja w linii 49 pliku Advanced\-Stopwatch.\-cpp.
+
+\hypertarget{class_advanced_stopwatch_ad59c3b0557fc23c1cba33964259a6113}{\index{Advanced\-Stopwatch@{Advanced\-Stopwatch}!Save\-Elapsed\-Time@{Save\-Elapsed\-Time}}
+\index{Save\-Elapsed\-Time@{Save\-Elapsed\-Time}!AdvancedStopwatch@{Advanced\-Stopwatch}}
+\paragraph[{Save\-Elapsed\-Time}]{\setlength{\rightskip}{0pt plus 5cm}bool Advanced\-Stopwatch\-::\-Save\-Elapsed\-Time (
+\begin{DoxyParamCaption}
+\item[{double}]{rekord}
+\end{DoxyParamCaption}
+)}}\label{class_advanced_stopwatch_ad59c3b0557fc23c1cba33964259a6113}
+
+
+Metoda zapisująca wartość pomiaru czasu okrążenia. 
+
+Dodaje podany czas do tablicy czasów okrążeń. 
+\begin{DoxyParams}[1]{Parametry}
+\mbox{\tt in}  & {\em rekord} & -\/ wartość pomiaru czasu \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Zwracane wartości}
+{\em true} & -\/ jeśli udało się zapisać \\
+\hline
+{\em false} & -\/ jeśli udało się zapisać \\
+\hline
+\end{DoxyRetVals}
+
+
+Definicja w linii 26 pliku Advanced\-Stopwatch.\-cpp.
+
+\hypertarget{class_advanced_stopwatch_a12a5049b736e3e394361f57221224b7e}{\index{Advanced\-Stopwatch@{Advanced\-Stopwatch}!Series\-Average@{Series\-Average}}
+\index{Series\-Average@{Series\-Average}!AdvancedStopwatch@{Advanced\-Stopwatch}}
+\paragraph[{Series\-Average}]{\setlength{\rightskip}{0pt plus 5cm}double Advanced\-Stopwatch\-::\-Series\-Average (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_advanced_stopwatch_a12a5049b736e3e394361f57221224b7e}
+
+
+Metoda wyliczająca średni czas okrążenia. 
+
+
+
+Definicja w linii 37 pliku Advanced\-Stopwatch.\-cpp.
+
+
+
+Dokumentacja dla tej klasy została wygenerowana z plików\-:\begin{DoxyCompactItemize}
+\item 
+prj/inc/\hyperlink{_advanced_stopwatch_8hh}{Advanced\-Stopwatch.\-hh}\item 
+prj/src/\hyperlink{_advanced_stopwatch_8cpp}{Advanced\-Stopwatch.\-cpp}\end{DoxyCompactItemize}

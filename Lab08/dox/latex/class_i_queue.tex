@@ -1,0 +1,125 @@
+\hypertarget{class_i_queue}{\subsection{Dokumentacja szablonu klasy I\-Queue$<$ Object $>$}
+\label{class_i_queue}\index{I\-Queue$<$ Object $>$@{I\-Queue$<$ Object $>$}}
+}
+
+
+Klasa modelująca interfejs kolejki.  
+
+
+
+
+{\ttfamily \#include $<$I\-Queue.\-hh$>$}
+
+
+
+Diagram dziedziczenia dla I\-Queue$<$ Object $>$
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=174pt]{class_i_queue__inherit__graph}
+\end{center}
+\end{figure}
+\subsubsection*{Metody publiczne}
+\begin{DoxyCompactItemize}
+\item 
+virtual bool \hyperlink{class_i_queue_ae1c9e42be6ff647666c4468d3eec55a1}{Is\-Empty} ()=0
+\begin{DoxyCompactList}\small\item\em Metoda sprawdzająca, czy lista jest pusta. \end{DoxyCompactList}\item 
+virtual Object \hyperlink{class_i_queue_ab07e072ad92e4e93d57a0d3950c72764}{Front} ()=0
+\begin{DoxyCompactList}\small\item\em Metoda zwracająca pierwszy element kolejki. \end{DoxyCompactList}\item 
+virtual void \hyperlink{class_i_queue_af818d0fb70a5d088e6088c42f51df7e1}{Enqueue} (Object item)=0
+\begin{DoxyCompactList}\small\item\em Metoda dodająca element do kolejki. \end{DoxyCompactList}\item 
+virtual Object \hyperlink{class_i_queue_a6836f64bdf7102fdda590f21f7e5e208}{Dequeue} ()=0
+\begin{DoxyCompactList}\small\item\em Metoda usuwająca element kolejki. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsubsection{Opis szczegółowy}
+\subsubsection*{template$<$typename Object$>$class I\-Queue$<$ Object $>$}
+
+Klasa modelująca interfejs kolejki. 
+
+Definiuje A\-D\-T dla kolejki.
+
+\hyperlink{class_kolejka}{Kolejka} może przechowywać dowolny typ danych dzięki zastosowaniu szablonu. 
+
+Definicja w linii 22 pliku I\-Queue.\-hh.
+
+
+
+\subsubsection{Dokumentacja funkcji składowych}
+\hypertarget{class_i_queue_a6836f64bdf7102fdda590f21f7e5e208}{\index{I\-Queue@{I\-Queue}!Dequeue@{Dequeue}}
+\index{Dequeue@{Dequeue}!IQueue@{I\-Queue}}
+\paragraph[{Dequeue}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Object $>$ virtual Object {\bf I\-Queue}$<$ Object $>$\-::Dequeue (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{class_i_queue_a6836f64bdf7102fdda590f21f7e5e208}
+
+
+Metoda usuwająca element kolejki. 
+
+Usuwa element z początki kolejki. \begin{DoxyReturn}{Zwraca}
+pierwszy element kolejki 
+\end{DoxyReturn}
+
+
+Implementowany w \hyperlink{class_kolejka_a61f6ec1436c1e95ce8675c8ccaf3e469}{Kolejka$<$ Object $>$}.
+
+\hypertarget{class_i_queue_af818d0fb70a5d088e6088c42f51df7e1}{\index{I\-Queue@{I\-Queue}!Enqueue@{Enqueue}}
+\index{Enqueue@{Enqueue}!IQueue@{I\-Queue}}
+\paragraph[{Enqueue}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Object $>$ virtual void {\bf I\-Queue}$<$ Object $>$\-::Enqueue (
+\begin{DoxyParamCaption}
+\item[{Object}]{item}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{class_i_queue_af818d0fb70a5d088e6088c42f51df7e1}
+
+
+Metoda dodająca element do kolejki. 
+
+Ustawia element na koniec kolejki. 
+\begin{DoxyParams}[1]{Parametry}
+\mbox{\tt in}  & {\em item} & -\/ element do dodania \\
+\hline
+\end{DoxyParams}
+
+
+Implementowany w \hyperlink{class_kolejka_a726ad18814137293bfdfd0500da27038}{Kolejka$<$ Object $>$}.
+
+\hypertarget{class_i_queue_ab07e072ad92e4e93d57a0d3950c72764}{\index{I\-Queue@{I\-Queue}!Front@{Front}}
+\index{Front@{Front}!IQueue@{I\-Queue}}
+\paragraph[{Front}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Object $>$ virtual Object {\bf I\-Queue}$<$ Object $>$\-::Front (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{class_i_queue_ab07e072ad92e4e93d57a0d3950c72764}
+
+
+Metoda zwracająca pierwszy element kolejki. 
+
+\begin{DoxyReturn}{Zwraca}
+pierwszy element kolejki 
+\end{DoxyReturn}
+
+
+Implementowany w \hyperlink{class_kolejka_a04e41ef06540e8a5f5338da175f26a1f}{Kolejka$<$ Object $>$}.
+
+\hypertarget{class_i_queue_ae1c9e42be6ff647666c4468d3eec55a1}{\index{I\-Queue@{I\-Queue}!Is\-Empty@{Is\-Empty}}
+\index{Is\-Empty@{Is\-Empty}!IQueue@{I\-Queue}}
+\paragraph[{Is\-Empty}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Object $>$ virtual bool {\bf I\-Queue}$<$ Object $>$\-::Is\-Empty (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{class_i_queue_ae1c9e42be6ff647666c4468d3eec55a1}
+
+
+Metoda sprawdzająca, czy lista jest pusta. 
+
+true -\/ jeśli lista jest pusta  false -\/ jeśli nie jest pusta 
+
+Implementowany w \hyperlink{class_kolejka_a15a8e2eff269ee2d6264af30cfd23cb2}{Kolejka$<$ Object $>$}.
+
+
+
+Dokumentacja dla tej klasy została wygenerowana z pliku\-:\begin{DoxyCompactItemize}
+\item 
+prj/inc/\hyperlink{_i_queue_8hh}{I\-Queue.\-hh}\end{DoxyCompactItemize}

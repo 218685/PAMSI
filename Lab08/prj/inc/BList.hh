@@ -28,7 +28,6 @@ private:
   BNode<Object> * head; //poczatek listy
   BNode<Object> * tail; //poczatek listy
 public:
-
 /*!
  * \brief Konstruktor listy dwukierunkowej
  *
@@ -107,8 +106,6 @@ public:
   virtual const Object& RemoveFront();
   virtual const Object& RemoveBack();
   void Print();
-  Object& AtIndex(int i) const;
-  unsigned int IndexOf(const Object& p) const;
 };
 
 template <typename Object>
@@ -117,10 +114,8 @@ BList<Object>::BList()
 
 template <typename Object>
 BList<Object>::~BList(){
- // cout << "usuwanie" << endl;
   while(!IsEmpty())
     RemoveFront();
-    //cout << "usunolem" << endl;
 }
 
 template <typename Object>
@@ -152,7 +147,7 @@ void BList<Object>::AddFront(const Object newItem){
   Head() = v;
 
   if(v->next())
-    (v->next())->prev(v);
+    (v->next())->prev() = v;
   else
     Tail() = v;
 }
@@ -219,38 +214,6 @@ const Object& BList<Object>::RemoveBack(){
 }
 
 template <typename Object>
-Object& AtIndex(int i) const{
-
-  BNode<Object>* x = head;
-  while(x != NULL && x->index() != i)
-    x = x->next();
-    
-  return x->element();
-}
-
-template <typename Object>
-unsigned int IndexOf(const Object& p) const{
-
-  Node<Object>* x = head;
-  while(x != NULL && x->Element() != p)
-    x = x->next();
-    
-  return x->index();
-}
-
-template <typename Object>
-void BList<Object>::Print(){
-  
-  BNode<Object>* p = Head();
-
-  while(p){
-    cout << " " << p->element();
-    p = p->next();
-  }
-  cout << endl;
-}
-
-template <typename Object>
 BNode<Object>* BList<Object>::Find(Object k){
 
   BNode<Object>* x = head;
@@ -258,6 +221,18 @@ BNode<Object>* BList<Object>::Find(Object k){
     x = x->next();
     }
   return x;
+}
+
+template <typename Object>
+void BList<Object>::Print(){
+  
+  BNode<Object>* p = head;
+
+  while(p!=NULL){
+    cout << " " << p->element();
+    p = p->next();
+  }
+  cout << endl;
 }
 
 #endif

@@ -1,0 +1,322 @@
+\hypertarget{class_b_list}{\subsection{Dokumentacja szablonu klasy B\-List$<$ Object $>$}
+\label{class_b_list}\index{B\-List$<$ Object $>$@{B\-List$<$ Object $>$}}
+}
+
+
+Szablonowa klasa implementująca listę dwukierunkową  
+
+
+
+
+{\ttfamily \#include $<$B\-List.\-hh$>$}
+
+
+
+Diagram dziedziczenia dla B\-List$<$ Object $>$
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=166pt]{class_b_list__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Diagram współpracy dla B\-List$<$ Object $>$\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=166pt]{class_b_list__coll__graph}
+\end{center}
+\end{figure}
+\subsubsection*{Metody publiczne}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_b_list_a5c2484087706cf974e47ea4dfb6c83ca}{B\-List} ()
+\begin{DoxyCompactList}\small\item\em Konstruktor listy dwukierunkowej. \end{DoxyCompactList}\item 
+\hyperlink{class_b_list_a370a72d6aece919c9cc048563077eab8}{$\sim$\-B\-List} ()
+\begin{DoxyCompactList}\small\item\em Destruktor listy dwukierunkowej. \end{DoxyCompactList}\item 
+\hyperlink{class_b_node}{B\-Node}$<$ Object $>$ $\ast$\& \hyperlink{class_b_list_a985da34d870b50fd254568206c6d2522}{Head} ()
+\begin{DoxyCompactList}\small\item\em Metoda zwracająca głowę listy. \end{DoxyCompactList}\item 
+\hyperlink{class_b_node}{B\-Node}$<$ Object $>$ $\ast$\& \hyperlink{class_b_list_a8b8f2f947c10fedf2a49cbe59f7f4d6f}{Tail} ()
+\begin{DoxyCompactList}\small\item\em Metoda zwracająca ogon listy. \end{DoxyCompactList}\item 
+\hyperlink{class_b_node}{B\-Node}$<$ Object $>$ $\ast$ \hyperlink{class_b_list_af7803b6789c78625383905e167fe1f3c}{Find} (Object k)
+\begin{DoxyCompactList}\small\item\em Metoda wyszukująca element na liście. \end{DoxyCompactList}\item 
+virtual bool \hyperlink{class_b_list_ae69bf69a67a46e5a3a0a9ba743354b2b}{Is\-Empty} ()
+\begin{DoxyCompactList}\small\item\em Metoda sprawdzająca, czy lista jest pusta. \end{DoxyCompactList}\item 
+virtual void \hyperlink{class_b_list_a3ce77cc9d73682bfac57c70dafdce89d}{Add\-Front} (const Object new\-Item)
+\item 
+virtual void \hyperlink{class_b_list_aacb4abd5a4dbe72dbf448d299eb4c6b8}{Add\-Back} (const Object new\-Item)
+\item 
+void \hyperlink{class_b_list_a2c602a2e303614fae5e8249146bc3966}{Add\-After} (\hyperlink{class_b_node}{B\-Node}$<$ Object $>$ $\ast$p, const Object new\-Item)
+\begin{DoxyCompactList}\small\item\em Metoda dodająca element we wskazane miejsce na liście. \end{DoxyCompactList}\item 
+const Object \& \hyperlink{class_b_list_ab0e7cb0e34864ec6937e281eaa48eb32}{Remove} (\hyperlink{class_b_node}{B\-Node}$<$ Object $>$ $\ast$p)
+\begin{DoxyCompactList}\small\item\em Metoda usuwająca wskazany element listy. \end{DoxyCompactList}\item 
+virtual const Object \& \hyperlink{class_b_list_a510b274bdcccf50699b41233a5f42a5f}{Remove\-Front} ()
+\item 
+virtual const Object \& \hyperlink{class_b_list_a4df7a72e29bfb324ca366fc2322184ea}{Remove\-Back} ()
+\item 
+void \hyperlink{class_b_list_a4382952f2329e9ec3d1403105ee26344}{Print} ()
+\end{DoxyCompactItemize}
+
+
+\subsubsection{Opis szczegółowy}
+\subsubsection*{template$<$typename Object$>$class B\-List$<$ Object $>$}
+
+Szablonowa klasa implementująca listę dwukierunkową 
+
+\hyperlink{class_b_list}{B\-List} jest zbudowana w oparciu o węzły \hyperlink{class_b_node}{B\-Node} oraz operacje na wskaźnikach.
+
+\hyperlink{class_b_list}{B\-List} może przechowywać dowolny typ danych dzięki zastosowaniu szablonu. 
+
+Definicja w linii 25 pliku B\-List.\-hh.
+
+
+
+\subsubsection{Dokumentacja konstruktora i destruktora}
+\hypertarget{class_b_list_a5c2484087706cf974e47ea4dfb6c83ca}{\index{B\-List@{B\-List}!B\-List@{B\-List}}
+\index{B\-List@{B\-List}!BList@{B\-List}}
+\paragraph[{B\-List}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Object $>$ {\bf B\-List}$<$ Object $>$\-::{\bf B\-List} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_b_list_a5c2484087706cf974e47ea4dfb6c83ca}
+
+
+Konstruktor listy dwukierunkowej. 
+
+Inicjuje listę poprzez ustawienie wskaźnika N\-U\-L\-L jako początek (head) tej listy. 
+
+Definicja w linii 112 pliku B\-List.\-hh.
+
+\hypertarget{class_b_list_a370a72d6aece919c9cc048563077eab8}{\index{B\-List@{B\-List}!$\sim$\-B\-List@{$\sim$\-B\-List}}
+\index{$\sim$\-B\-List@{$\sim$\-B\-List}!BList@{B\-List}}
+\paragraph[{$\sim$\-B\-List}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Object $>$ {\bf B\-List}$<$ Object $>$\-::$\sim${\bf B\-List} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_b_list_a370a72d6aece919c9cc048563077eab8}
+
+
+Destruktor listy dwukierunkowej. 
+
+Usuwa listę poprzez ustawienie wskaźnika N\-U\-L\-L jako początek (head) tej listy. 
+
+Definicja w linii 116 pliku B\-List.\-hh.
+
+
+
+\subsubsection{Dokumentacja funkcji składowych}
+\hypertarget{class_b_list_a2c602a2e303614fae5e8249146bc3966}{\index{B\-List@{B\-List}!Add\-After@{Add\-After}}
+\index{Add\-After@{Add\-After}!BList@{B\-List}}
+\paragraph[{Add\-After}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Object$>$ void {\bf B\-List}$<$ Object $>$\-::Add\-After (
+\begin{DoxyParamCaption}
+\item[{{\bf B\-Node}$<$ Object $>$ $\ast$}]{p, }
+\item[{const Object}]{new\-Item}
+\end{DoxyParamCaption}
+)}}\label{class_b_list_a2c602a2e303614fae5e8249146bc3966}
+
+
+Metoda dodająca element we wskazane miejsce na liście. 
+
+Alokuje nowy węzeł, dodaje nowy element, dodaje powiązanie tak,
+
+
+\begin{DoxyParams}[1]{Parametry}
+\mbox{\tt in}  & {\em new\-Item} & -\/ element do dodania \\
+\hline
+\mbox{\tt in}  & {\em p} & -\/ docelowa pozycja elementu \\
+\hline
+\end{DoxyParams}
+
+
+Definicja w linii 170 pliku B\-List.\-hh.
+
+\hypertarget{class_b_list_aacb4abd5a4dbe72dbf448d299eb4c6b8}{\index{B\-List@{B\-List}!Add\-Back@{Add\-Back}}
+\index{Add\-Back@{Add\-Back}!BList@{B\-List}}
+\paragraph[{Add\-Back}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Object$>$ void {\bf B\-List}$<$ Object $>$\-::Add\-Back (
+\begin{DoxyParamCaption}
+\item[{const Object}]{new\-Item}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_b_list_aacb4abd5a4dbe72dbf448d299eb4c6b8}
+
+
+Implementuje \hyperlink{class_i_list_a62af6638df7793dc5696c716122e1fc8}{I\-List$<$ Object $>$}.
+
+
+
+Definicja w linii 156 pliku B\-List.\-hh.
+
+\hypertarget{class_b_list_a3ce77cc9d73682bfac57c70dafdce89d}{\index{B\-List@{B\-List}!Add\-Front@{Add\-Front}}
+\index{Add\-Front@{Add\-Front}!BList@{B\-List}}
+\paragraph[{Add\-Front}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Object$>$ void {\bf B\-List}$<$ Object $>$\-::Add\-Front (
+\begin{DoxyParamCaption}
+\item[{const Object}]{new\-Item}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_b_list_a3ce77cc9d73682bfac57c70dafdce89d}
+
+
+Implementuje \hyperlink{class_i_list_a8015c8bd4e35161d31f863e74e943329}{I\-List$<$ Object $>$}.
+
+
+
+Definicja w linii 140 pliku B\-List.\-hh.
+
+\hypertarget{class_b_list_af7803b6789c78625383905e167fe1f3c}{\index{B\-List@{B\-List}!Find@{Find}}
+\index{Find@{Find}!BList@{B\-List}}
+\paragraph[{Find}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Object$>$ {\bf B\-Node}$<$ Object $>$ $\ast$ {\bf B\-List}$<$ Object $>$\-::Find (
+\begin{DoxyParamCaption}
+\item[{Object}]{k}
+\end{DoxyParamCaption}
+)}}\label{class_b_list_af7803b6789c78625383905e167fe1f3c}
+
+
+Metoda wyszukująca element na liście. 
+
+Implementuje algorytm liniowego przeszukiwania listy.
+
+
+\begin{DoxyParams}[1]{Parametry}
+\mbox{\tt in}  & {\em k} & -\/ element do wyszukania \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Zwraca}
+Wskaźnik do znalezionego elementu lub N\-U\-L\-L, gdy nie znaleziono. 
+\end{DoxyReturn}
+
+
+Definicja w linii 217 pliku B\-List.\-hh.
+
+\hypertarget{class_b_list_a985da34d870b50fd254568206c6d2522}{\index{B\-List@{B\-List}!Head@{Head}}
+\index{Head@{Head}!BList@{B\-List}}
+\paragraph[{Head}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Object $>$ {\bf B\-Node}$<$ Object $>$ $\ast$\& {\bf B\-List}$<$ Object $>$\-::Head (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_b_list_a985da34d870b50fd254568206c6d2522}
+
+
+Metoda zwracająca głowę listy. 
+
+Zwraca wskaźnik do początku listy lub N\-U\-L\-L, jeśli lista jest pusta.
+
+\begin{DoxyReturn}{Zwraca}
+Wskaźnik do głowy listy. 
+\end{DoxyReturn}
+
+
+Definicja w linii 128 pliku B\-List.\-hh.
+
+\hypertarget{class_b_list_ae69bf69a67a46e5a3a0a9ba743354b2b}{\index{B\-List@{B\-List}!Is\-Empty@{Is\-Empty}}
+\index{Is\-Empty@{Is\-Empty}!BList@{B\-List}}
+\paragraph[{Is\-Empty}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Object $>$ bool {\bf B\-List}$<$ Object $>$\-::Is\-Empty (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_b_list_ae69bf69a67a46e5a3a0a9ba743354b2b}
+
+
+Metoda sprawdzająca, czy lista jest pusta. 
+
+Sprawdza, czy head wskazuje na coś innego niż N\-U\-L\-L. Implementacja metody wirtualnej z interfejsu \hyperlink{class_i_list}{I\-List}.
+
+\begin{DoxyReturn}{Zwraca}
+true -\/ jeśli lista jest pusta, false -\/ jeśli nie 
+\end{DoxyReturn}
+
+
+Implementuje \hyperlink{class_i_list_a6a67d956d023bd003fd4a19e766d475c}{I\-List$<$ Object $>$}.
+
+
+
+Definicja w linii 122 pliku B\-List.\-hh.
+
+\hypertarget{class_b_list_a4382952f2329e9ec3d1403105ee26344}{\index{B\-List@{B\-List}!Print@{Print}}
+\index{Print@{Print}!BList@{B\-List}}
+\paragraph[{Print}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Object $>$ void {\bf B\-List}$<$ Object $>$\-::Print (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_b_list_a4382952f2329e9ec3d1403105ee26344}
+
+
+Definicja w linii 227 pliku B\-List.\-hh.
+
+\hypertarget{class_b_list_ab0e7cb0e34864ec6937e281eaa48eb32}{\index{B\-List@{B\-List}!Remove@{Remove}}
+\index{Remove@{Remove}!BList@{B\-List}}
+\paragraph[{Remove}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Object$>$ const Object \& {\bf B\-List}$<$ Object $>$\-::Remove (
+\begin{DoxyParamCaption}
+\item[{{\bf B\-Node}$<$ Object $>$ $\ast$}]{p}
+\end{DoxyParamCaption}
+)}}\label{class_b_list_ab0e7cb0e34864ec6937e281eaa48eb32}
+
+
+Metoda usuwająca wskazany element listy. 
+
+Uaktualnia head, aby wskazywał na kolejny element na liście, po czym usuwa stary węzeł.
+
+
+\begin{DoxyParams}[1]{Parametry}
+\mbox{\tt in}  & {\em p} & -\/ element do usunięcia \\
+\hline
+\end{DoxyParams}
+
+
+Definicja w linii 182 pliku B\-List.\-hh.
+
+\hypertarget{class_b_list_a4df7a72e29bfb324ca366fc2322184ea}{\index{B\-List@{B\-List}!Remove\-Back@{Remove\-Back}}
+\index{Remove\-Back@{Remove\-Back}!BList@{B\-List}}
+\paragraph[{Remove\-Back}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Object $>$ const Object \& {\bf B\-List}$<$ Object $>$\-::Remove\-Back (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_b_list_a4df7a72e29bfb324ca366fc2322184ea}
+
+
+Implementuje \hyperlink{class_i_list_ab4db42b40d2b583a26b1c3b398769e15}{I\-List$<$ Object $>$}.
+
+
+
+Definicja w linii 211 pliku B\-List.\-hh.
+
+\hypertarget{class_b_list_a510b274bdcccf50699b41233a5f42a5f}{\index{B\-List@{B\-List}!Remove\-Front@{Remove\-Front}}
+\index{Remove\-Front@{Remove\-Front}!BList@{B\-List}}
+\paragraph[{Remove\-Front}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Object $>$ const Object \& {\bf B\-List}$<$ Object $>$\-::Remove\-Front (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_b_list_a510b274bdcccf50699b41233a5f42a5f}
+
+
+Implementuje \hyperlink{class_i_list_a61e3afad71d99da6b85148e61fa01e9b}{I\-List$<$ Object $>$}.
+
+
+
+Definicja w linii 205 pliku B\-List.\-hh.
+
+\hypertarget{class_b_list_a8b8f2f947c10fedf2a49cbe59f7f4d6f}{\index{B\-List@{B\-List}!Tail@{Tail}}
+\index{Tail@{Tail}!BList@{B\-List}}
+\paragraph[{Tail}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Object $>$ {\bf B\-Node}$<$ Object $>$ $\ast$\& {\bf B\-List}$<$ Object $>$\-::Tail (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_b_list_a8b8f2f947c10fedf2a49cbe59f7f4d6f}
+
+
+Metoda zwracająca ogon listy. 
+
+Zwraca wskaźnik do końca listy lub N\-U\-L\-L, jeśli lista jest pusta.
+
+\begin{DoxyReturn}{Zwraca}
+Wskaźnik do ogona listy. 
+\end{DoxyReturn}
+
+
+Definicja w linii 134 pliku B\-List.\-hh.
+
+
+
+Dokumentacja dla tej klasy została wygenerowana z pliku\-:\begin{DoxyCompactItemize}
+\item 
+prj/inc/\hyperlink{_b_list_8hh}{B\-List.\-hh}\end{DoxyCompactItemize}

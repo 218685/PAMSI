@@ -1,0 +1,115 @@
+\hypertarget{class_i_list}{\subsection{Dokumentacja szablonu klasy I\-List$<$ Object $>$}
+\label{class_i_list}\index{I\-List$<$ Object $>$@{I\-List$<$ Object $>$}}
+}
+
+
+Interfejs listy dwukierunkowej.  
+
+
+
+
+{\ttfamily \#include $<$I\-List.\-hh$>$}
+
+
+
+Diagram dziedziczenia dla I\-List$<$ Object $>$
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=166pt]{class_i_list__inherit__graph}
+\end{center}
+\end{figure}
+\subsubsection*{Metody publiczne}
+\begin{DoxyCompactItemize}
+\item 
+virtual bool \hyperlink{class_i_list_a6a67d956d023bd003fd4a19e766d475c}{Is\-Empty} ()=0
+\begin{DoxyCompactList}\small\item\em Metoda sprawdzająca, czy lista jest pusta. \end{DoxyCompactList}\item 
+virtual void \hyperlink{class_i_list_a8015c8bd4e35161d31f863e74e943329}{Add\-Front} (const Object new\-Item)=0
+\item 
+virtual void \hyperlink{class_i_list_a62af6638df7793dc5696c716122e1fc8}{Add\-Back} (const Object new\-Item)=0
+\item 
+virtual const Object \& \hyperlink{class_i_list_a61e3afad71d99da6b85148e61fa01e9b}{Remove\-Front} ()=0
+\item 
+virtual const Object \& \hyperlink{class_i_list_ab4db42b40d2b583a26b1c3b398769e15}{Remove\-Back} ()=0
+\end{DoxyCompactItemize}
+
+
+\subsubsection{Opis szczegółowy}
+\subsubsection*{template$<$typename Object$>$class I\-List$<$ Object $>$}
+
+Interfejs listy dwukierunkowej. 
+
+Definiuje A\-D\-T dla listy dwukierunkowej.
+
+Lista może przechowywać dowolny typ danych dzięki zastosowaniu szablonu. 
+
+Definicja w linii 22 pliku I\-List.\-hh.
+
+
+
+\subsubsection{Dokumentacja funkcji składowych}
+\hypertarget{class_i_list_a62af6638df7793dc5696c716122e1fc8}{\index{I\-List@{I\-List}!Add\-Back@{Add\-Back}}
+\index{Add\-Back@{Add\-Back}!IList@{I\-List}}
+\paragraph[{Add\-Back}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Object$>$ virtual void {\bf I\-List}$<$ Object $>$\-::Add\-Back (
+\begin{DoxyParamCaption}
+\item[{const Object}]{new\-Item}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{class_i_list_a62af6638df7793dc5696c716122e1fc8}
+
+
+Implementowany w \hyperlink{class_b_list_aacb4abd5a4dbe72dbf448d299eb4c6b8}{B\-List$<$ Object $>$} i \hyperlink{class_b_list_aacb4abd5a4dbe72dbf448d299eb4c6b8}{B\-List$<$ unsigned $>$}.
+
+\hypertarget{class_i_list_a8015c8bd4e35161d31f863e74e943329}{\index{I\-List@{I\-List}!Add\-Front@{Add\-Front}}
+\index{Add\-Front@{Add\-Front}!IList@{I\-List}}
+\paragraph[{Add\-Front}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Object$>$ virtual void {\bf I\-List}$<$ Object $>$\-::Add\-Front (
+\begin{DoxyParamCaption}
+\item[{const Object}]{new\-Item}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{class_i_list_a8015c8bd4e35161d31f863e74e943329}
+
+
+Implementowany w \hyperlink{class_b_list_a3ce77cc9d73682bfac57c70dafdce89d}{B\-List$<$ Object $>$} i \hyperlink{class_b_list_a3ce77cc9d73682bfac57c70dafdce89d}{B\-List$<$ unsigned $>$}.
+
+\hypertarget{class_i_list_a6a67d956d023bd003fd4a19e766d475c}{\index{I\-List@{I\-List}!Is\-Empty@{Is\-Empty}}
+\index{Is\-Empty@{Is\-Empty}!IList@{I\-List}}
+\paragraph[{Is\-Empty}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Object$>$ virtual bool {\bf I\-List}$<$ Object $>$\-::Is\-Empty (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{class_i_list_a6a67d956d023bd003fd4a19e766d475c}
+
+
+Metoda sprawdzająca, czy lista jest pusta. 
+
+true -\/ jeśli lista jest pusta  truefalse -\/ jeśli nie jest pusta 
+
+Implementowany w \hyperlink{class_b_list_ae69bf69a67a46e5a3a0a9ba743354b2b}{B\-List$<$ Object $>$} i \hyperlink{class_b_list_ae69bf69a67a46e5a3a0a9ba743354b2b}{B\-List$<$ unsigned $>$}.
+
+\hypertarget{class_i_list_ab4db42b40d2b583a26b1c3b398769e15}{\index{I\-List@{I\-List}!Remove\-Back@{Remove\-Back}}
+\index{Remove\-Back@{Remove\-Back}!IList@{I\-List}}
+\paragraph[{Remove\-Back}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Object$>$ virtual const Object\& {\bf I\-List}$<$ Object $>$\-::Remove\-Back (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{class_i_list_ab4db42b40d2b583a26b1c3b398769e15}
+
+
+Implementowany w \hyperlink{class_b_list_a4df7a72e29bfb324ca366fc2322184ea}{B\-List$<$ Object $>$} i \hyperlink{class_b_list_a4df7a72e29bfb324ca366fc2322184ea}{B\-List$<$ unsigned $>$}.
+
+\hypertarget{class_i_list_a61e3afad71d99da6b85148e61fa01e9b}{\index{I\-List@{I\-List}!Remove\-Front@{Remove\-Front}}
+\index{Remove\-Front@{Remove\-Front}!IList@{I\-List}}
+\paragraph[{Remove\-Front}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Object$>$ virtual const Object\& {\bf I\-List}$<$ Object $>$\-::Remove\-Front (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{class_i_list_a61e3afad71d99da6b85148e61fa01e9b}
+
+
+Implementowany w \hyperlink{class_b_list_a510b274bdcccf50699b41233a5f42a5f}{B\-List$<$ Object $>$} i \hyperlink{class_b_list_a510b274bdcccf50699b41233a5f42a5f}{B\-List$<$ unsigned $>$}.
+
+
+
+Dokumentacja dla tej klasy została wygenerowana z pliku\-:\begin{DoxyCompactItemize}
+\item 
+prj/inc/\hyperlink{_i_list_8hh}{I\-List.\-hh}\end{DoxyCompactItemize}

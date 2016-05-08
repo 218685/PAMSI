@@ -3,8 +3,8 @@ CXXFLAGS=-g -Iinc -Wall -pedantic -std=c++11
 __start__: Graph
 	./Graph
 
-BinaryTree: obj obj/main.o  obj/AdvancedStopwatch.o obj/Stopwatch.o
-	g++ -Wall -pedantic -std=c++0x -o Graph obj/main.o obj/AdvancedStopwatch.o obj/Stopwatch.o
+Graph: obj obj/main.o  obj/AdvancedStopwatch.o obj/Stopwatch.o obj/Graph.o 
+	g++ -Wall -pedantic -std=c++0x -o Graph obj/main.o obj/AdvancedStopwatch.o obj/Stopwatch.o obj/Graph.o
 
 obj:
 	mkdir ./obj
@@ -15,7 +15,10 @@ obj/Stopwatch.o: src/Stopwatch.cpp
 obj/AdvancedStopwatch.o: src/AdvancedStopwatch.cpp 
 	g++ -c ${CXXFLAGS} -o obj/AdvancedStopwatch.o src/AdvancedStopwatch.cpp
 
-obj/main.o: src/main.cpp inc/Graph.hh
+obj/Graph.o: src/Graph.cpp
+	g++ -c ${CXXFLAGS} -o obj/Graph.o src/Graph.cpp
+
+obj/main.o: src/main.cpp 
 	g++ -c ${CXXFLAGS} -o obj/main.o src/main.cpp
 
 clean:

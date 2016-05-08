@@ -3,7 +3,7 @@ CXXFLAGS=-g -Iinc -Wall -pedantic -std=c++11
 __start__: Graph
 	./Graph
 
-BinaryTree: obj obj/main.o  obj/AdvancedStopwatch.o obj/Stopwatch.o
+Graph: obj obj/main.o  obj/AdvancedStopwatch.o obj/Stopwatch.o
 	g++ -Wall -pedantic -std=c++0x -o Graph obj/main.o obj/AdvancedStopwatch.o obj/Stopwatch.o
 
 obj:
@@ -19,4 +19,4 @@ obj/main.o: src/main.cpp inc/Graph.hh inc/BList.hh
 	g++ -c ${CXXFLAGS} -o obj/main.o src/main.cpp
 
 clean:
-	rm -f obj/*.o Graph
+	rm -f obj/*.o Graph core
