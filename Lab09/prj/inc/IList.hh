@@ -7,13 +7,13 @@ using namespace std;
 /*!
  * \file  IList.hh
  *
- *  Plik zawiera interfejs listy dwukierunkową
+ *  Plik zawiera interfejs listy jednokierunkową
  */
 
 /*!
- * \brief Interfejs listy dwukierunkowej
+ * \brief Interfejs listy jednokierunkowej
  *
- *  Definiuje ADT dla listy dwukierunkowej.
+ *  Definiuje ADT dla listy jednokierunkowej.
  *
  *  Lista może przechowywać dowolny typ danych dzięki zastosowaniu
  *  szablonu.
@@ -25,16 +25,32 @@ public:
 /*!
  * \brief Metoda sprawdzająca, czy lista jest pusta
  *
- * \returnval true - jeśli lista jest pusta
- * \returnval truefalse - jeśli nie jest pusta
+ * \retval true - jeśli lista jest pusta
+ * \retval truefalse - jeśli nie jest pusta
  */
   virtual bool IsEmpty() = 0;
 
-  virtual void AddFront(const Object newItem) = 0;
-  virtual void AddBack(const Object newItem) = 0;
+/*!
+ * \brief Metoda zwracająca pierwszy element listy
+ *
+ * \return pierwszy element listy
+ */
+  virtual const Object& Front() = 0;
 
-  virtual const Object& RemoveFront() = 0;
-  virtual const Object& RemoveBack() = 0;
+/*!
+ * \brief Metoda dodająca element na początek listy
+ *
+ *
+ * \param[in] newItem - element do dodania
+ */
+  virtual void AddFront(const Object newItem) = 0;
+
+/*!
+ * \brief Metoda usuwająca element z początku listy
+ *
+ */
+  virtual void RemoveFront() = 0;
+
 };
 
 #endif

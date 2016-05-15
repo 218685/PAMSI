@@ -15,7 +15,7 @@ obj/Stopwatch.o: src/Stopwatch.cpp
 obj/AdvancedStopwatch.o: src/AdvancedStopwatch.cpp 
 	g++ -c ${CXXFLAGS} -o obj/AdvancedStopwatch.o src/AdvancedStopwatch.cpp
 
-obj/main.o: src/main.cpp inc/Graph.hh inc/BList.hh
+obj/main.o: src/main.cpp inc/Graph.hh inc/Graph_Test.hh inc/BList.hh
 	g++ -c ${CXXFLAGS} -o obj/main.o src/main.cpp
 
 clean:

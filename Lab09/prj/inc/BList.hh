@@ -2,7 +2,7 @@
 #define BLIST_HH
 
 #include <iostream>
-#include "IList.hh"
+#include "IBList.hh"
 #include "BNode.hh"
 using namespace std;
 
@@ -22,7 +22,7 @@ using namespace std;
  *  szablonu.
  */
 template < typename Object >
-class BList : public IList<Object>
+class BList : public IBList<Object>
 {
 private:
   BNode<Object> * head; //poczatek listy
@@ -52,6 +52,7 @@ public:
  * \return Wskaźnik do głowy listy.
  */
   BNode<Object>* & Head();
+  Object Front();
 
   /*!
  * \brief Metoda zwracająca ogon listy
@@ -61,6 +62,7 @@ public:
  * \return Wskaźnik do ogona listy.
  */
   BNode<Object>* & Tail();
+  Object Back();
 
 /*!
  * \brief Metoda wyszukująca element na liście
@@ -102,10 +104,11 @@ public:
  *
  * \param[in] p - element do usunięcia
  */
-  const Object& Remove(BNode<Object>* p);
-  virtual const Object& RemoveFront();
-  virtual const Object& RemoveBack();
+  const Object Remove(BNode<Object>* p);
+  virtual const Object RemoveFront();
+  virtual const Object RemoveBack();
   void Print();
+  void Clear();
 };
 
 template <typename Object>
@@ -134,6 +137,20 @@ template <typename Object>
 BNode<Object>* & BList<Object>::Tail(){
 
   return tail;
+}
+
+template <typename Object>
+Object BList<Object>::Front(){
+
+  if(Head()!=NULL)
+    return head->element();
+}
+
+template <typename Object>
+Object BList<Object>::Back(){
+
+  if(Tail()!=NULL)
+    return tail->element();
 }
 
 template <typename Object>
@@ -179,7 +196,7 @@ void BList<Object>::AddAfter(BNode<Object>* p, const Object newItem){
 }
 
 template <typename Object>
-const Object& BList<Object>::Remove(BNode<Object>* p){
+const Object BList<Object>::Remove(BNode<Object>* p){
 
   if(IsEmpty())
     throw "Lista jest pusta!";
@@ -196,19 +213,20 @@ const Object& BList<Object>::Remove(BNode<Object>* p){
     //usuwanie wlasciwe podanego elementu
     p->next() = NULL;
     p->prev() = NULL;
-    delete p;
+    if(p!=NULL)
+      delete p;
     return old;
     }
 }
 
 template <typename Object>
-const Object& BList<Object>::RemoveFront(){
+const Object BList<Object>::RemoveFront(){
 
   return Remove(Head());
 }
 
 template <typename Object>
-const Object& BList<Object>::RemoveBack(){
+const Object BList<Object>::RemoveBack(){
 
   return Remove(Tail());
 }
@@ -227,12 +245,23 @@ template <typename Object>
 void BList<Object>::Print(){
   
   BNode<Object>* p = head;
-
+  if(p==NULL)
+    cout << "Pusto!" << endl;
   while(p!=NULL){
     cout << " " << p->element();
     p = p->next();
   }
   cout << endl;
+}
+
+template <typename Object>
+void BList<Object>::Clear(){
+  
+  while(!IsEmpty())
+    RemoveFront();
+    
+  if(IsEmpty())  
+    head = tail = NULL;
 }
 
 #endif

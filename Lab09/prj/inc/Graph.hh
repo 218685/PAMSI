@@ -6,7 +6,7 @@
 #include "BList.hh"
 #include "Edge.hh"
 #include "Voisin.hh"
-#include "HashTab.hh"
+#include "Path.hh"
 #include "Kolejka.hh"
 #include "Stos.hh"
 using namespace std;
@@ -24,16 +24,15 @@ protected:
   BList<Edge> E;                /*!-> lista krawędzi */
   int N;
 public:
-/*!
+ /*!
  * \brief Konstruktor grafu
  *
- * Inicjuje graf poprzez utworzenie tablicy list sąsiedztwa.
- * Domyślnie 10 wierzchołków.
+ * Inicjuje graf poprzez przypisanie tablicy list sąsiedztwa wskaźnika NULL.
  */
   Graph();
   
 /*!
- * \brief Konstruktor grafu
+ * \brief Parametryczny konstruktor grafu
  *
  * Inicjuje graf poprzez utworzenie tablicy list sąsiedztwa 
  * dla podanej liczby wierzchołków.
@@ -48,7 +47,6 @@ public:
  * Wywołuje destruktor listy wierzchołków.
  */
   ~Graph();
-  //virtual unsigned* getNeighbours(unsigned i);
   
 /*!
  * \brief Podaje listę sąsiedztwa danego wierzchołka
@@ -118,18 +116,38 @@ public:
  * \param[in] i - numer wierzchołka startowego
  */
   void DFS(unsigned i);
+  
+/*!
+ * \brief Wyszukuje najkrótszą ścieżkę w grafie metodą Branch&Bound
+ * 
+ * \param[in] i - numer wierzchołka startowego
+ * \param[in] finish - numer wierzchołka końcowego
+ */
+  void BranchBound(unsigned i,unsigned finish);
+
+/*!
+ * \brief Wyszukuje najkrótszą ścieżkę w grafie metodą Branch&Bound with Extended List
+ * 
+ * \param[in] i - numer wierzchołka startowego
+ * \param[in] finish - numer wierzchołka końcowego
+ */
+  void BranchBoundExtendedList(unsigned i, unsigned finish);
 };
 
 Graph::Graph(){
   
-  N = 10;
-  Adj = new BList<Voisin>[N];
+  N = 0;
+  Adj = NULL;
+  V.Head() = NULL;
+  V.Tail() = NULL;
+  E.Head() = NULL;
+  E.Tail() = NULL;
 }
 
 Graph::Graph(int problemSize){
   
   N = problemSize;
-  Adj = new BList<Voisin>[N];
+  Adj = new BList<Voisin>[N+1];
 }
 
 Graph::~Graph(){
@@ -175,6 +193,7 @@ void Graph::insertEdge(unsigned i, unsigned j, unsigned w){
       Voisin a(i,w), b(j,w);
       Adj[i].AddFront(b);
       Adj[j].AddFront(a);
+    //dodanie krawędzi
       Edge e(i,j,w);
       E.AddFront(e);
     }
@@ -183,43 +202,13 @@ void Graph::insertEdge(unsigned i, unsigned j, unsigned w){
 
 void Graph::Print(){
  
-  for(int i = 0; i<N; ++i){
+  if(Adj!=NULL)
+  for(int i = 0; i<N; ++i)
     if(!Adj[i].IsEmpty()){
       cout << i << " <-->";
       Adj[i].Print();
     }
-  }
-}
-
-void Graph::BFS(unsigned i){
   
-  bool* visited = new bool[maxN()];
-  for(int i=0; i<maxN(); ++i)
-    visited[i] = false;
-  BNode<Voisin>* p;
-  //nowa kolejka
-  Kolejka<unsigned> Q;
-  // W kolejce umieszczamy węzeł startowy
-  Q.Enqueue(i);
-  visited[i] = true;      // Wierzchołek i oznaczamy jako odwiedzony
-  
-  while( !Q.IsEmpty() ){
-   //Odczytujemy węzeł z kolejki
-    i = Q.Front();          
-    //cout << i << " ";
-    Q.Dequeue();
-    if(!neighbours(i)->IsEmpty()){
-      for( p = neighbours(i)->Head(); p!=NULL; p = p->next() ){
-        if(visited[p->element().v()]!=true){
-          unsigned v = p->element().v();
-          Q.Enqueue(v);
-          visited[v] = true; // i oznaczamy ich jako odwiedzonych
-        }
-      }//for
-    }
-  }
-  
-  delete[] visited;
 }
 
 void Graph::DFS(unsigned i){
@@ -255,6 +244,194 @@ void Graph::DFS(unsigned i){
   }
   
   delete[] visited;
+}
+
+void Graph::BFS(unsigned i){
+  
+  bool* visited = new bool[maxN()];
+  for(int i=0; i<maxN(); ++i)
+    visited[i] = false;
+  BNode<Voisin>* p;
+  //nowa kolejka
+  Kolejka<unsigned> Q;
+  // W kolejce umieszczamy węzeł startowy
+  Q.Enqueue(i);
+  visited[i] = true;      // Wierzchołek i oznaczamy jako odwiedzony
+  
+  while( !Q.IsEmpty() ){
+   //Odczytujemy węzeł z kolejki
+    i = Q.Front();          
+    //cout << i << " ";
+    Q.Dequeue();
+    if(!neighbours(i)->IsEmpty()){
+      for( p = neighbours(i)->Head(); p!=NULL; p = p->next() ){
+        if(visited[p->element().v()]!=true){
+          unsigned v = p->element().v();
+          Q.Enqueue(v);
+          visited[v] = true; // i oznaczamy ich jako odwiedzonych
+        }
+      }//for
+    }
+  }
+  
+  delete[] visited;
+}
+
+void Graph::BranchBound(unsigned i, unsigned finish){
+/*
+  create a list P
+  add the start node S, to P giving it one element
+  Until first path of P ends with G, or P is empty
+      extract the first path from P
+      extend first path one step to all neighbors creating X new paths
+      reject all paths with loops
+      add each remaining new path to of P
+      Sort all paths by current distance travelled, shortest first.
+  If G found -> success. Else -> failure.	*/
+    
+  BNode<Voisin>* p;
+  Voisin u;
+  
+  //lista ścieżek
+  BList<Path> L;
+  Path S;
+  S.c() = 0;
+  S.V().push_back(i);
+  L.AddFront(S);
+ // L.Print();
+  Path currentPath,  currentBest;
+  vector<Path> tmp;
+  int licznikSciezek = 0;
+  while( !L.IsEmpty() ){
+   //Odczytujemy węzeł z kolejki
+    currentPath = L.RemoveFront();  
+   // cout << " LISTA: " << currentPath << endl;
+    unsigned currentTop = currentPath.V().back();
+    if(currentTop == finish){
+      cout << "   Najkrótsza ścieżka: " << currentPath << endl;
+      break;
+    }
+ //dla każdego wierzchołka na liście sąsiedztwa wierzchołka i
+    for( p = neighbours(currentTop)->Head(); p!=NULL; p = p->next() ){
+      u = p->element();
+    //sprawdzamy, czy ścieżka nie jest zapętlona
+      
+      if( !currentPath.Find( u.v() )){
+     //wydłużamy ścieżkę o jeden krok
+        Path extendedPath;
+        extendedPath = currentPath;
+        //dodajemy kolejny wierzchołek
+        extendedPath.V().push_back(u.v());
+        extendedPath.c() += u.w();
+        //dodajemy do pomocniczej struktury
+        tmp.push_back(extendedPath);
+        ++licznikSciezek;
+      }
+    }//for  
+ /*
+    for (vector<Path>::iterator it = tmp.begin() ; it != tmp.end(); ++it)
+      cout << *it << endl;*/
+      //po dodaniu wszystkich nowych ścieżek 
+      //dokonujemy "sortowania", żeby ścieżka o najkrótszej 
+      //drodze była zawsze na początku listy
+
+  Path currentBest;
+  int bestCost = 100000000;
+  vector<Path>::iterator it, toErase;
+ 
+  for (it = tmp.begin(); it != tmp.end(); ++it)
+    if( (*it).c() < bestCost){
+      bestCost = (*it).c();
+     // cout << "Bestcost: " << bestCost << endl;
+      currentBest = *it;
+      toErase = it;
+    } 
+  L.AddFront(currentBest);
+  
+  tmp.erase(toErase);
+  //cin >> sa;
+  //tmp.clear();
+  }//while
+  cout << "   Sprawdzono ścieżek: " << licznikSciezek << endl;
+  tmp.clear();
+}
+
+
+void Graph::BranchBoundExtendedList(unsigned i, unsigned finish){
+  
+  //tablica wierzchołków rozszerzonych
+  bool* extended = new bool[maxN()];
+  for(int i=0; i<maxN(); ++i)
+    extended[i] = false;
+  
+  BNode<Voisin>* p;
+  Voisin u;
+  
+  //lista ścieżek
+  BList<Path> L;
+  Path S;
+  S.c() = 0;
+  S.V().push_back(i);
+  L.AddFront(S);
+
+  Path currentPath,  currentBest;
+  vector<Path> tmp;
+  int licznikSciezek = 0;
+  while( !L.IsEmpty() ){
+   //Odczytujemy węzeł z kolejki
+    currentPath = L.RemoveFront();  
+   // cout << " LISTA: " << currentPath << endl;
+    unsigned currentTop = currentPath.V().back();
+    if(currentTop == finish){
+      cout << "   Najkrótsza ścieżka: " << currentPath << endl;
+      break;
+    }
+  //jeśi wcześniej nie rozwinięto tego wierzchołka
+    if( extended[currentTop]!=true ){
+  //dla każdego wierzchołka na liście sąsiedztwa wierzchołka i
+      for( p = neighbours(currentTop)->Head(); p!=NULL; p = p->next() ){
+        u = p->element();
+      //sprawdzamy, czy ścieżka nie jest zapętlona
+        
+        if( !currentPath.Find( u.v() )){
+      //wydłużamy ścieżkę o jeden krok
+          Path extendedPath;
+          extendedPath = currentPath;
+          //dodajemy kolejny wierzchołek
+          extendedPath.V().push_back(u.v());
+          extendedPath.c() += u.w();
+          //dodajemy do pomocniczej struktury
+          tmp.push_back(extendedPath);
+          ++licznikSciezek;
+        }
+      }//for 
+      extended[currentTop] = true;
+    } 
+    
+ /*   for (vector<Path>::iterator it = tmp.begin() ; it != tmp.end(); ++it)
+      cout << *it << endl;*/
+      //po dodaniu wszystkich nowych ścieżek 
+      //dokonujemy "sortowania", żeby ścieżka o najkrótszej 
+      //drodze była zawsze na początku listy
+
+  Path currentBest;
+  int bestCost = 100000000;
+  vector<Path>::iterator it, toErase;
+ 
+  for (it = tmp.begin(); it != tmp.end(); ++it)
+    if( (*it).c() < bestCost){
+      bestCost = (*it).c();
+     // cout << "Bestcost: " << bestCost << endl;
+      currentBest = *it;
+      toErase = it;
+    } 
+  L.AddFront(currentBest);
+  
+  tmp.erase(toErase);
+  }//while
+  cout << "   Sprawdzono ścieżek: " << licznikSciezek << endl;
+  tmp.clear();
+  delete[] extended;
 }
 
 #endif

@@ -111,9 +111,30 @@ public:
  * \return element na wierzchu stosu
  */
   virtual Object Pop();
-
+  void Print();
+  bool Find(Object k);
+  
 };
 
+template <typename Object>
+bool Stos<Object>::Find(Object k){
+  
+  if(!IsEmpty()){
+   for(int i =0; i<top; ++i)
+      if (Tab[i] == k);
+        return true;
+  }
+  return false;
+}
+
+template <typename Object>
+void Stos<Object>::Print(){
+  
+  if(!IsEmpty()){
+   for(int i =0; i<top; ++i)
+      cout << Tab[i] << "->";
+  }
+}
 
 template <typename Object>
 Stos<Object>::Stos(){

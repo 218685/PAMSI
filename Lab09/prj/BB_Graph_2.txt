@@ -1,0 +1,17 @@
+Skrypt uruchomiony nie, 15 maj 2016, 13:57:33
+]0;agasinsk@agasinsk-laptop: ~/Dokumenty/lab/PAMSI/Lab09/prjagasinsk@agasinsk-laptop:~/Dokumenty/lab/PAMSI/Lab09/prj$ script BB_Graph.txt[12Pcd prj/Dokumenty/lab/PAMSI//Lab09[A]0;agasinsk@agasinsk-laptop: ~/Dokumenty/lab/PAMSI/Lab09/prjagasinsk@agasinsk-laptop:~/Dokumenty/lab/PAMSI/Lab09/prj$ exit[K
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cmake
+g++ -c -g -Iinc -Wall -pedantic -std=c++11 -o obj/main.o src/main.cpp
+src/main.cpp:63:5: warning: "/*" within comment [-Wcomment]
+     /*
+ ^
+g++ -Wall -pedantic -std=c++0x -o Graph obj/main.o obj/AdvancedStopwatch.o obj/Stopwatch.o
+./Graph
+******************
+N: 1000000
+^Cmake: *** [__start__] Przerwanie
+
+]0;agasinsk@agasinsk-laptop: ~/Dokumenty/lab/PAMSI/Lab09/prjagasinsk@agasinsk-laptop:~/Dokumenty/lab/PAMSI/Lab09/prj$ exit 
+exit
+
+Skrypt wykonany nie, 15 maj 2016, 14:23:22

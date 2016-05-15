@@ -5,6 +5,7 @@
 #include "IRunnable.hh"
 #include "Graph.hh"
 using namespace std;
+
 /*!
  * \file Graph_Test.hh
  *
@@ -16,8 +17,9 @@ using namespace std;
 template < typename Object >
 class Graph_Test : public Graph, public IRunnable<Object>
 {
-  Object problemSize;
-  char searchType = 'B'; 
+  Object problemSize; /*!-> rozmiar problemu */
+  char pathSearchType = 'S';  /*!-> metoda wyszukiwania ścieżki */
+  unsigned pathEnd = 0;       /*!-> końcowy wierzchołek */
 public:
 /*!
  * \brief Zmienia sposób przechodzenia grafu
@@ -25,6 +27,13 @@ public:
  * Ustawia podany typ znakowy jako wyznacznik przejścia grafu metodą BFS lub DFS.
  */
   void changeSearchType(char type);
+  
+/*!
+ * \brief Losuje końcowy wierzchołek 
+ *
+ * Losuje wierzchołek w zakresie od 0 do N, do którego ma zostać znaleziona najkrótsza ścieżka.
+ */
+  void RandomPathEnd();
 
 /*!
  * \brief Metoda przygotowująca graf
@@ -55,23 +64,38 @@ public:
 template < typename Object >
 void Graph_Test<Object>::changeSearchType(char type){
   
-  searchType = type;
+  pathSearchType = type;
+}
+
+template < typename Object >
+void Graph_Test<Object>::RandomPathEnd(){
+  
+  pathEnd = rand() % maxN();
 }
 
 template < typename Object >
 bool Graph_Test<Object>::Prepare(Object parametr){
   
+ // srand(time(NULL));
   problemSize = parametr;
+  N = 0;
   N = problemSize;
-  if(Adj!=NULL)
+ //czyszczenie 
+  if(Adj != NULL)
     delete[] Adj;
-  Adj = new BList<unsigned int>[N];
-  //cout << maxN();
-  srand(time(NULL));
+    
+  if(!V.IsEmpty())
+    V.Clear();
+    
+  if(!E.IsEmpty())
+    E.Clear(); 
+  
+  Adj = new BList<Voisin>[N+1];
+
 //dodawanie wierzchołków
   for(int i=0; i<maxN(); ++i)
     insertVertex(i);
-
+ 
   unsigned* tmp = new unsigned int[maxN()];
   for(int i=0; i<maxN(); ++i)
     tmp[i] = i;
@@ -81,17 +105,17 @@ bool Graph_Test<Object>::Prepare(Object parametr){
 //generowanie spójnego grafu
 
   for(int i=0; i<maxN()-1; ++i) 
-    insertEdge(tmp[i], tmp[i+1]);
-  
-  if(tmp!= NULL)
-   delete [] tmp;
+    insertEdge(tmp[i], tmp[i+1], rand()%10+1);
+
+  delete [] tmp;
+
 //losowanie dodatkowych krawędzi 
   unsigned beginning, end;
   
   for(int i=0; i<2*maxN(); ++i){
     beginning = rand() % maxN();
     end = rand() % maxN();
-    insertEdge(beginning, end);
+    insertEdge(beginning, end, rand()%10+1);
   }
  
   return true;
@@ -99,11 +123,11 @@ bool Graph_Test<Object>::Prepare(Object parametr){
 
 template < typename Object >
 bool Graph_Test<Object>::Run(){
-
-  if(searchType=='B')
-    this->BFS(0);
-  if(searchType=='D')
-    this->DFS(0);
+ 
+  if(pathSearchType=='S')
+    this->BranchBound(0, pathEnd);
+  if(pathSearchType=='E')
+    this->BranchBoundExtendedList(0, pathEnd);
     
    return true;
 }

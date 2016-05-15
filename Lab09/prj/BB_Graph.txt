@@ -1,0 +1,161 @@
+Skrypt uruchomiony sob, 14 maj 2016, 18:56:13
+]0;agasinsk@agasinsk-laptop: ~/Dokumenty/lab/PAMSI/Lab09/prjagasinsk@agasinsk-laptop:~/Dokumenty/lab/PAMSI/Lab09/prj$ exitmake
+g++ -c -g -Iinc -Wall -pedantic -std=c++11 -o obj/main.o src/main.cpp
+src/main.cpp:63:5: warning: "/*" within comment [-Wcomment]
+     /*
+ ^
+g++ -Wall -pedantic -std=c++0x -o Graph obj/main.o obj/AdvancedStopwatch.o obj/Stopwatch.o
+./Graph
+******************
+N:      10
+   Najkrótsza ścieżka: ->0->6 | $1
+   Sprawdzono ścieżek: 4
+   Najkrótsza ścieżka: ->0->6 | $1
+   Sprawdzono ścieżek: 4
+   Najkrótsza ścieżka: ->0->6->1->2 | $7
+   Sprawdzono ścieżek: 23
+   Najkrótsza ścieżka: ->0->6->1->2 | $7
+   Sprawdzono ścieżek: 23
+   Najkrótsza ścieżka: ->0->6 | $1
+   Sprawdzono ścieżek: 4
+   Najkrótsza ścieżka: ->0->6 | $1
+   Sprawdzono ścieżek: 4
+   Najkrótsza ścieżka: ->0->7 | $6
+   Sprawdzono ścieżek: 7
+   Najkrótsza ścieżka: ->0->7 | $6
+   Sprawdzono ścieżek: 7
+   Najkrótsza ścieżka: ->0->6->1->2 | $7
+   Sprawdzono ścieżek: 23
+   Najkrótsza ścieżka: ->0->6->1->2 | $7
+   Sprawdzono ścieżek: 23
+   Najkrótsza ścieżka: ->0->8 | $7
+   Sprawdzono ścieżek: 19
+   Najkrótsza ścieżka: ->0->8 | $7
+   Sprawdzono ścieżek: 19
+
+B&B 10: 	0.000044 s
+B&B EL 10: 	0.000038 s
+******************
+N:     100
+   Najkrótsza ścieżka: ->0->17->77->29->98->60 | $12
+   Sprawdzono ścieżek: 490
+   Najkrótsza ścieżka: ->0->17->77->29->98->60 | $12
+   Sprawdzono ścieżek: 330
+   Najkrótsza ścieżka: ->0->82->28 | $5
+   Sprawdzono ścieżek: 28
+   Najkrótsza ścieżka: ->0->82->28 | $5
+   Sprawdzono ścieżek: 28
+   Najkrótsza ścieżka: ->0->17->77->29->98->63 | $13
+   Sprawdzono ścieżek: 689
+   Najkrótsza ścieżka: ->0->17->77->29->98->63 | $13
+   Sprawdzono ścieżek: 362
+   Najkrótsza ścieżka: ->0->17->77->29->98->63 | $13
+   Sprawdzono ścieżek: 689
+   Najkrótsza ścieżka: ->0->17->77->29->98->63 | $13
+   Sprawdzono ścieżek: 362
+   Najkrótsza ścieżka: ->0->17->77->29->32 | $9
+   Sprawdzono ścieżek: 183
+   Najkrótsza ścieżka: ->0->17->77->29->32 | $9
+   Sprawdzono ścieżek: 160
+   Najkrótsza ścieżka: ->0->7->15 | $6
+   Sprawdzono ścieżek: 48
+   Najkrótsza ścieżka: ->0->7->15 | $6
+   Sprawdzono ścieżek: 48
+
+B&B 100: 	0.003526 s
+B&B EL 100: 	0.001630 s
+******************
+N:    1000
+   Najkrótsza ścieżka: ->0->18->189->921->581->17->8->632 | $19
+   Sprawdzono ścieżek: 7508
+   Najkrótsza ścieżka: ->0->18->189->921->581->17->8->632 | $19
+   Sprawdzono ścieżek: 3554
+   Najkrótsza ścieżka: ->0->141->314->456->821->282->259->903->721->9 | $19
+   Sprawdzono ścieżek: 8347
+   Najkrótsza ścieżka: ->0->141->314->456->821->282->259->903->721->9 | $19
+   Sprawdzono ścieżek: 3710
+   Najkrótsza ścieżka: ->0->955->795->688 | $11
+   Sprawdzono ścieżek: 203
+   Najkrótsza ścieżka: ->0->955->795->688 | $11
+   Sprawdzono ścieżek: 203
+   Najkrótsza ścieżka: ->0->141->314->456->821->597->796 | $13
+   Sprawdzono ścieżek: 673
+   Najkrótsza ścieżka: ->0->141->314->456->821->597->796 | $13
+   Sprawdzono ścieżek: 650
+   Najkrótsza ścieżka: ->0->18->627->42->164 | $14
+   Sprawdzono ścieżek: 889
+   Najkrótsza ścieżka: ->0->18->627->42->164 | $14
+   Sprawdzono ścieżek: 849
+   Najkrótsza ścieżka: ->0->18->627->623->789->112->894->792->32->779 | $14
+   Sprawdzono ścieżek: 1086
+   Najkrótsza ścieżka: ->0->18->627->623->789->112->894->792->32->779 | $14
+   Sprawdzono ścieżek: 976
+
+B&B 1000: 	0.248349 s
+B&B EL 1000: 	0.099555 s
+******************
+N:   10000
+   Najkrótsza ścieżka: ->0->7098->8010->9569->9027->7352->3049->8877->9005->3629->1033->3697->8317 | $24
+   Sprawdzono ścieżek: 93660
+   Najkrótsza ścieżka: ->0->7098->8010->9569->9027->7352->3049->8877->9005->3629->1033->3697->8317 | $24
+   Sprawdzono ścieżek: 37561
+   Najkrótsza ścieżka: ->0->7098->8010->9569->1433->820->1568->6523->3493->3870 | $23
+   Sprawdzono ścieżek: 40541
+   Najkrótsza ścieżka: ->0->7098->8010->9569->1433->820->1568->6523->3493->3870 | $23
+   Sprawdzono ścieżek: 25728
+   Najkrótsza ścieżka: ->0->7098->8010->9569->7608->3348->3104->4408->5338->5360 | $22
+   Sprawdzono ścieżek: 31859
+   Najkrótsza ścieżka: ->0->7098->8010->9569->7608->3348->3104->4408->5338->5360 | $22
+   Sprawdzono ścieżek: 22559
+   Najkrótsza ścieżka: ->0->7098->8010->5394->3819->5748->4264->2854->753->717->7269 | $27
+   Sprawdzono ścieżek: 329291
+   Najkrótsza ścieżka: ->0->7098->8010->5394->3819->5748->4264->2854->753->717->7269 | $27
+   Sprawdzono ścieżek: 47943
+   Najkrótsza ścieżka: ->0->7098->8010->5394->3819->9758->3252->2344 | $25
+   Sprawdzono ścieżek: 102398
+   Najkrótsza ścieżka: ->0->7098->8010->5394->3819->9758->3252->2344 | $25
+   Sprawdzono ścieżek: 39019
+   Najkrótsza ścieżka: ->0->7739->6590->2744->5148->2192->6016->5232->5680 | $24
+   Sprawdzono ścieżek: 79699
+   Najkrótsza ścieżka: ->0->7739->6590->2744->5148->2192->6016->5232->5680 | $24
+   Sprawdzono ścieżek: 36071
+
+B&B 10000: 	244.279722 s
+B&B EL 10000: 	27.136113 s
+******************
+N:  100000
+   Najkrótsza ścieżka: ->0->75739->67687->35394->49321->44091->7787->21082->65156->35343->99176 | $23
+   Sprawdzono ścieżek: 180737
+   Najkrótsza ścieżka: ->0->75739->67687->35394->49321->44091->7787->21082->65156->35343->99176 | $23
+   Sprawdzono ścieżek: 142591
+   Najkrótsza ścieżka: ->0->75739->97262->85931->83059->54441->83383->42659->59571 | $23
+   Sprawdzono ścieżek: 158595
+   Najkrótsza ścieżka: ->0->75739->97262->85931->83059->54441->83383->42659->59571 | $23
+   Sprawdzono ścieżek: 128076
+   Najkrótsza ścieżka: ->0->75739->1727->51485->49017->91798->28175->76571->21267->54578->99221 | $26
+   Sprawdzono ścieżek: 589172
+   Najkrótsza ścieżka: ->0->75739->1727->51485->49017->91798->28175->76571->21267->54578->99221 | $26
+   Sprawdzono ścieżek: 305048
+   Najkrótsza ścieżka: ->0->75739->97262->37916->28811->15322->57998->59206->99789->40689->9155->73206->3357 | $24
+   Sprawdzono ścieżek: 242813
+   Najkrótsza ścieżka: ->0->75739->97262->37916->28811->15322->57998->59206->99789->40689->9155->73206->3357 | $24
+   Sprawdzono ścieżek: 177509
+   Najkrótsza ścieżka: ->0->5504->16003->73486->74513->4388->38223->43378->63272->70005->91871->99096->37341->30353->49770->23633 | $24
+   Sprawdzono ścieżek: 352755
+   Najkrótsza ścieżka: ->0->5504->16003->73486->74513->4388->38223->43378->63272->70005->91871->99096->37341->30353->49770->23633 | $24
+   Sprawdzono ścieżek: 226138
+   Najkrótsza ścieżka: ->0->5504->82501->68684->51970->13925->53720 | $17
+   Sprawdzono ścieżek: 13857
+   Najkrótsza ścieżka: ->0->5504->82501->68684->51970->13925->53720 | $17
+   Sprawdzono ścieżek: 13567
+
+B&B 100000: 	1028.966006 s
+B&B EL 100000: 	502.482724 s
+******************
+N: 1000000
+^Cmake: *** [__start__] Przerwanie
+
+]0;agasinsk@agasinsk-laptop: ~/Dokumenty/lab/PAMSI/Lab09/prjagasinsk@agasinsk-laptop:~/Dokumenty/lab/PAMSI/Lab09/prj$ exit
+exit
+
+Skrypt wykonany sob, 14 maj 2016, 22:19:43

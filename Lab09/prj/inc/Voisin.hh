@@ -6,12 +6,12 @@ using namespace std;
 
 class Voisin{
   unsigned i;
-  int waga;
+  unsigned waga;
 public:
-  Voisin() { i = 0; waga = -1;}
-  Voisin(unsigned neighbour, unsigned w = -1) { i = neighbour; waga = w;}
+  Voisin() { i = 0; waga = 1;}
+  Voisin(unsigned neighbour, unsigned w = 1) { i = neighbour; waga = w;}
   unsigned& v() { return i;  }
-  int& w() { return waga; }
+  unsigned& w() { return waga; }
 };
 
   bool operator == (Voisin e1 , Voisin e2 ){
