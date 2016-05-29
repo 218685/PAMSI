@@ -37,3 +37,27 @@ się z pewnym kosztem, który jednak "amortyzuje się" podobnie jak operacje wyk
 przy powiększaniu tablicy dynamicznej (przy odpowedniej strategii tego powiększania).
 
 Ocena: 4,5
+
+# Lab7 - drzewa
+
+Sprawozdanie poprawne, wykres i tabela poprawne. Otrzymane wyniki i argumentacja
+ich rozbieżności z teorią - Ok.
+
+Kod ponownie wykorzystuje interfejs IRunnable - Ok.
+
+Ocena: 5
+
+# Lab 8 - grafy (DFS, BFS)
+
+Sprawozdanie poprawne, wykres i tabele poprawne. Brak omówienia złożoności algorytmów,
+która zapewne dzięki zastosowaniu listy odwiedzonych wydaje się być na poziomie O(|V|).
+
+Kod poprawny.
+
+Ocena: 5
+
+# Lab 9 - grafy (b&b)
+
+Sprawozdanie i kod poprawne.
+
+Ocena: 5
