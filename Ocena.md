@@ -49,8 +49,7 @@ Ocena: 5
 
 # Lab 8 - grafy (DFS, BFS)
 
-Sprawozdanie poprawne, wykres i tabele poprawne. Brak omówienia złożoności algorytmów,
-która zapewne dzięki zastosowaniu listy odwiedzonych wydaje się być na poziomie O(|V|).
+Sprawozdanie poprawne, wykres i tabele poprawne. Brak omówienia złożoności algorytmów.
 
 Kod poprawny.
 
